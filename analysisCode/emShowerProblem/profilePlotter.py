@@ -52,8 +52,6 @@ args = parser.parse_args()
 import ROOT
 ROOT.gROOT.SetBatch(True)   # never open a display
 ROOT.gStyle.SetOptStat(0)
-#ROOT.gStyle.SetPadGridX(True)
-#ROOT.gStyle.SetPadGridY(True)
 ROOT.gStyle.SetPadTickX(True)
 ROOT.gStyle.SetPadTickX(True)
 ROOT.gStyle.SetTitleFontSize(0.04)
@@ -113,6 +111,8 @@ def make_graph(x_vals, y_vals, color, line_style=1, line_width=2):
     g.SetLineStyle(line_style)
     g.SetLineWidth(line_width)
     g.SetMarkerSize(0)
+    if g.Integral() > 0:
+        g.Scale(1/g.Integral())
     return g
 
 # ── Open PDF output ───────────────────────────────────────────────────────────
@@ -148,7 +148,7 @@ y_max = max(all_y) * 1.15
 
 # Draw frame
 frame1 = c1.DrawFrame(0, 0, x_max, y_max)
-frame1.GetXaxis().SetTitle("Depth (radiation lengths X_{0})")
+frame1.GetXaxis().SetTitle("Depth (X_{0})")
 frame1.GetYaxis().SetTitle("Energy deposit [GeV / bin]")
 frame1.SetTitle("Longitudinal shower profiles: measured (solid) vs expected (dashed)")
 
@@ -178,6 +178,8 @@ g_dummy_dash  = make_graph([0],[0], ROOT.kBlack, 2, 2)
 leg1.AddEntry(g_dummy_solid, "Measured",  "l")
 leg1.AddEntry(g_dummy_dash,  "Expected",  "l")
 graphs_keep += [g_dummy_solid, g_dummy_dash]
+
+leg1.SetBorderSize(0)
 
 leg1.Draw()
 c1.Print(pdf_open)   # opens the PDF and writes first page
