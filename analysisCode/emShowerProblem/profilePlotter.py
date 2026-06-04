@@ -144,7 +144,8 @@ for cl in selected:
     all_y += cl["measured"] + cl["expected"]
 
 x_max = max(all_t) * 1.05
-y_max = max(all_y) * 1.15
+#y_max = max(all_y) * 1.15
+y_max = 1.0
 
 # Draw frame
 frame1 = c1.DrawFrame(0, 0, x_max, y_max)
