@@ -52,8 +52,10 @@ args = parser.parse_args()
 import ROOT
 ROOT.gROOT.SetBatch(True)   # never open a display
 ROOT.gStyle.SetOptStat(0)
-ROOT.gStyle.SetPadGridX(True)
-ROOT.gStyle.SetPadGridY(True)
+#ROOT.gStyle.SetPadGridX(True)
+#ROOT.gStyle.SetPadGridY(True)
+ROOT.gStyle.SetPadTickX(True)
+ROOT.gStyle.SetPadTickX(True)
 ROOT.gStyle.SetTitleFontSize(0.04)
 
 BIN_WIDTH = 0.5   # radiation lengths per bin (must match PandoraSettings)
