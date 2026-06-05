@@ -108,6 +108,52 @@ def make_graph(x_vals, y_vals, color, line_style=1, line_width=2):
 pdf_open  = args.output + "["
 pdf_close = args.output + "]"
 
+# ── Per-cluster pages: one page per cluster ───────────────────────────────────
+c_single = ROOT.TCanvas("c_single", "Per-cluster", 1000, 600)
+c_single.SetLeftMargin(0.12)
+c_single.SetBottomMargin(0.12)
+ 
+# Open the PDF on the first page
+first_page = True
+ 
+print(f"Writing {len(clusters)} individual cluster pages...")
+for idx, cl in enumerate(clusters):
+    c_single.Clear()
+ 
+    t = [i * BIN_WIDTH for i in range(cl["nBins"])]
+ 
+    all_y = cl["measured"] + cl["expected"]
+    x_max_s = max(t) * 1.10 if t else 1.0
+    y_max_s = max(all_y) * 1.15 if all_y else 1.0
+ 
+    frame_s = c_single.DrawFrame(0, 0, x_max_s, y_max_s)
+    frame_s.GetXaxis().SetTitle("Depth (radiation lengths X_{0})")
+    frame_s.GetYaxis().SetTitle("Energy deposit [GeV / bin]")
+    frame_s.SetTitle(
+        f"Cluster {idx}  E={cl['energy']:.3f} GeV  "
+        f"profileStart={cl['profileStart']:.2f} X_{{0}}  "
+        f"#chi={cl['profileDisc']:.4f}"
+    )
+ 
+    g_s_meas = make_graph(t, cl["measured"], ROOT.kBlue+1, line_style=1, line_width=2)
+    g_s_exp  = make_graph(t, cl["expected"], ROOT.kRed+1,  line_style=2, line_width=2)
+    g_s_meas.Draw("L SAME")
+    g_s_exp.Draw("L SAME")
+ 
+    leg_s = ROOT.TLegend(0.62, 0.72, 0.88, 0.88)
+    leg_s.SetBorderSize(1)
+    leg_s.SetFillStyle(0)
+    leg_s.SetTextSize(0.030)
+    leg_s.AddEntry(g_s_meas, "Measured", "l")
+    leg_s.AddEntry(g_s_exp,  "Expected", "l")
+    leg_s.Draw()
+ 
+    if first_page:
+        c_single.Print(pdf_open)   # opens the PDF
+        first_page = False
+    c_single.Print(args.output)
+
+
 # ── Canvas 1: individual cluster profiles ─────────────────────────────────────
 c1 = ROOT.TCanvas("c1", "Individual cluster profiles", 1000, 600)
 c1.SetLeftMargin(0.12)
