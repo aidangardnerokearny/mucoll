@@ -141,7 +141,7 @@ for idx, cl in enumerate(clusters):
 
     frame_s = c_single.DrawFrame(0, 0, x_max_s, y_max_s)
     frame_s.GetXaxis().SetTitle("Depth (radiation lengths X_{0})")
-    frame_s.GetYaxis().SetTitle("Energy deposit [GeV / bin]")
+    frame_s.GetYaxis().SetTitle("Fractional energy deposit [% / 100  / bin]")
     frame_s.SetTitle(
         f"Cluster {idx}  E={cl['energy']:.3f} GeV  "
         f"profileStart={cl['profileStart']:.2f} X_{{0}}  "
