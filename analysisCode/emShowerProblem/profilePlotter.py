@@ -119,7 +119,7 @@ first_page = True
 print(f"Writing {len(clusters)} individual cluster pages...")
 for idx, cl in enumerate(clusters):
     c_single.Clear()
-    print(cl) 
+    #print(cl) 
     t = [i * BIN_WIDTH for i in range(cl["nBins"])]
  
     all_y = cl["measured"] + cl["expected"]
@@ -129,8 +129,8 @@ for idx, cl in enumerate(clusters):
  
     g_s_meas = make_graph(t, cl["measured"], ROOT.kBlue+1, line_style=1, line_width=2)
     g_s_exp  = make_graph(t, cl["expected"], ROOT.kRed+1,  line_style=2, line_width=2)
-    g_s_meas.Draw("L SAME")
-    g_s_exp.Draw("L SAME")
+    #g_s_meas.Draw("L SAME")
+    #g_s_exp.Draw("L SAME")
 
     scale_meas = g_s_meas.Integral()
     scale_exp = g_s_exp.Integral()
@@ -145,6 +145,9 @@ for idx, cl in enumerate(clusters):
         f"profileStart={cl['profileStart']:.2f} X_{{0}}  "
         f"#chi={cl['profileDisc']:.4f}"
     )
+
+    g_s_meas.Draw(" SAME")
+    g_s_exp.Draw("L SAME")
 
     leg_s = ROOT.TLegend(0.62, 0.72, 0.88, 0.88)
     leg_s.SetBorderSize(1)
