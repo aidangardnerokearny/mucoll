@@ -53,7 +53,7 @@ import ROOT
 ROOT.gROOT.SetBatch(True)   # never open a display
 ROOT.gStyle.SetOptStat(0)
 ROOT.gStyle.SetPadTickX(True)
-ROOT.gStyle.SetPadTickX(True)
+ROOT.gStyle.SetPadTickY(True)
 ROOT.gStyle.SetTitleFontSize(0.04)
 
 BIN_WIDTH = 0.5   # radiation lengths per bin (must match PandoraSettings)
@@ -150,7 +150,7 @@ y_max = 1.0
 # Draw frame
 frame1 = c1.DrawFrame(0, 0, x_max, y_max)
 frame1.GetXaxis().SetTitle("Depth (X_{0})")
-frame1.GetYaxis().SetTitle("Energy deposit [GeV / bin]")
+frame1.GetYaxis().SetTitle("Fractional energy deposit [% / 100 / bin]")
 frame1.SetTitle("Longitudinal shower profiles: measured (solid) vs expected (dashed)")
 
 leg1 = ROOT.TLegend(0.55, 0.55, 0.88, 0.88)
@@ -179,7 +179,7 @@ g_dummy_dash  = make_graph([0],[0], ROOT.kBlack, 2, 2)
 leg1.AddEntry(g_dummy_solid, "Measured",  "l")
 leg1.AddEntry(g_dummy_dash,  "Expected",  "l")
 graphs_keep += [g_dummy_solid, g_dummy_dash]
-
+leg1.SetTextSize(1.0)
 leg1.SetBorderSize(0)
 
 leg1.Draw()
@@ -207,10 +207,11 @@ t_avg    = [i * BIN_WIDTH for i in range(max_bins) if counts[i] > 0]
 avg_meas = [sum_meas[i] / counts[i] for i in range(max_bins) if counts[i] > 0]
 avg_exp  = [sum_exp[i]  / counts[i] for i in range(max_bins) if counts[i] > 0]
 
-y_max2 = max(max(avg_meas), max(avg_exp)) * 1.15
+#y_max2 = max(max(avg_meas), max(avg_exp)) * 1.15
+y_max2 = 0.5
 frame2 = c2.DrawFrame(0, 0, max(t_avg) * 1.05, y_max2)
-frame2.GetXaxis().SetTitle("Depth (radiation lengths X_{0})")
-frame2.GetYaxis().SetTitle("Mean energy deposit [GeV / bin]")
+frame2.GetXaxis().SetTitle("Depth (X_{0})")
+frame2.GetYaxis().SetTitle("Fractional  energy deposit [% / 100 / bin]")
 frame2.SetTitle(f"Average longitudinal profile ({len(clusters)} clusters): measured vs expected")
 
 g_avg_meas = make_graph(t_avg, avg_meas, ROOT.kBlue+1, 1, 3)
@@ -219,8 +220,9 @@ g_avg_meas.Draw("L SAME")
 g_avg_exp.Draw("L SAME")
 
 leg2 = ROOT.TLegend(0.55, 0.70, 0.88, 0.88)
-leg2.SetBorderSize(1)
+leg2.SetBorderSize(0)
 leg2.SetFillStyle(0)
+leg2.SetTextSize(1.0)
 leg2.AddEntry(g_avg_meas, "Mean measured", "l")
 leg2.AddEntry(g_avg_exp,  "Mean expected", "l")
 leg2.Draw()
