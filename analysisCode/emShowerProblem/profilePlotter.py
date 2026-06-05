@@ -146,7 +146,7 @@ for idx, cl in enumerate(clusters):
         f"#chi={cl['profileDisc']:.4f}"
     )
 
-    g_s_meas.Draw(" SAME")
+    g_s_meas.Draw("L SAME")
     g_s_exp.Draw("L SAME")
 
     leg_s = ROOT.TLegend(0.62, 0.72, 0.88, 0.88)
