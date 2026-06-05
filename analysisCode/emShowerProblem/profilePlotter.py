@@ -100,6 +100,7 @@ def make_graph(x_vals, y_vals, color, line_style=1, line_width=2,
     g.SetLineStyle(line_style)
     g.SetLineWidth(line_width)
     g.SetMarkerStyle(marker_style)
+    g.SetMarkerSize(5)
     if g.Integral() > 0:
         g.Scale(1/g.Integral())
     return g
