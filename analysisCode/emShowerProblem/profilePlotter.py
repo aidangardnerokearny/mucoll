@@ -123,7 +123,7 @@ for idx, cl in enumerate(clusters):
     t = [i * BIN_WIDTH for i in range(cl["nBins"])]
  
     all_y = cl["measured"] + cl["expected"]
-    x_max_s = max(t) * 1.10 if t else 1.0
+    x_max_s = max(t) * 0.10 if t else 1.0
     y_max_s = max(all_y) * 1.15 if all_y else 1.0
  
     frame_s = c_single.DrawFrame(0, 0, x_max_s, y_max_s)
