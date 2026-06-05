@@ -135,7 +135,9 @@ for idx, cl in enumerate(clusters):
     scale_meas = g_s_meas.Integral()
     scale_exp = g_s_exp.Integral()
 
-    y_max_s = max(g_s_meas.GetMaximum(), g_s_exp.GetMaximum()) * 1.15 # if all_y else 1.0
+    y_max_s = max(ROOT.TMath.MaxElement(g_s_meas.GetN(), g_s_meas.GetY()),
+                  ROOT.TMath.MaxElement(g_s_exp.GetN(), g_s_exp.GetY())) * 1.15 # if all_y else 1.0
+    print(y_max_s, g_s_meas.GetMaximum(), g_s_exp.GetMaximum())
 
     frame_s = c_single.DrawFrame(0, 0, x_max_s, y_max_s)
     frame_s.GetXaxis().SetTitle("Depth (radiation lengths X_{0})")
