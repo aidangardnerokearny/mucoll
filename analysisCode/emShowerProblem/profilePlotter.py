@@ -144,7 +144,7 @@ frame1.SetTitle("Longitudinal shower profiles: measured (solid) vs expected (das
 leg1 = ROOT.TLegend(0.55, 0.55, 0.88, 0.88)
 leg1.SetBorderSize(1)
 leg1.SetFillStyle(0)
-leg1.SetTextSize(0.01)
+leg1.SetTextSize(0.015)
 
 graphs_keep = []   # keep references alive
 for idx, cl in enumerate(selected):
@@ -195,7 +195,7 @@ avg_meas = [sum_meas[i] / counts[i] for i in range(max_bins) if counts[i] > 0]
 avg_exp  = [sum_exp[i]  / counts[i] for i in range(max_bins) if counts[i] > 0]
 
 #y_max2 = max(max(avg_meas), max(avg_exp)) * 1.15
-y_max2 = 0.5
+y_max2 = 0.2
 frame2 = c2.DrawFrame(0, 0, max(t_avg) * 1.05, y_max2)
 frame2.GetXaxis().SetTitle("Depth (X_{0})")
 frame2.GetYaxis().SetTitle("Fractional  energy deposit [% / 100 / bin]")
@@ -209,7 +209,7 @@ g_avg_exp.Draw("L SAME")
 leg2 = ROOT.TLegend(0.55, 0.70, 0.88, 0.88)
 leg2.SetBorderSize(0)
 leg2.SetFillStyle(0)
-leg2.SetTextSize(0.001)
+leg2.SetTextSize(0.015)
 leg2.AddEntry(g_avg_meas, "Mean measured", "l")
 leg2.AddEntry(g_avg_exp,  "Mean expected", "l")
 leg2.Draw()
