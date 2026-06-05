@@ -99,7 +99,7 @@ def make_graph(x_vals, y_vals, color, line_style=1, line_width=2,
     g.SetLineColor(color)
     g.SetLineStyle(line_style)
     g.SetLineWidth(line_width)
-    g.SetMarkerSize(marker_style)
+    g.SetMarkerStyle(marker_style)
     if g.Integral() > 0:
         g.Scale(1/g.Integral())
     return g
@@ -129,7 +129,7 @@ for idx, cl in enumerate(clusters):
  
  
     g_s_meas = make_graph(t, cl["measured"], ROOT.kBlue+1, line_style=1,
-                          line_width=2, marker_style=1)
+                          line_width=2, marker_style=20)
     g_s_exp  = make_graph(t, cl["expected"], ROOT.kRed+1,  line_style=2, line_width=2)
     #g_s_meas.Draw("L SAME")
     #g_s_exp.Draw("L SAME")
