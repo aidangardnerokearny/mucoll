@@ -1,15 +1,3 @@
-'''import ROOT
-import os
-import glob
-
-plot_dir = "/home/aidangardnerokearny/mucoll/analysisCode/efficiencyProblem/efficiencyPlots"
-os.makedirs(plot_dir, exist_ok=True)
-
-
-
-
-targetFile = ""'''
-
 """
 plot_shower_profiles_root.py
 
@@ -156,7 +144,7 @@ frame1.SetTitle("Longitudinal shower profiles: measured (solid) vs expected (das
 leg1 = ROOT.TLegend(0.55, 0.55, 0.88, 0.88)
 leg1.SetBorderSize(1)
 leg1.SetFillStyle(0)
-leg1.SetTextSize(0.028)
+leg1.SetTextSize(0.01)
 
 graphs_keep = []   # keep references alive
 for idx, cl in enumerate(selected):
@@ -179,7 +167,6 @@ g_dummy_dash  = make_graph([0],[0], ROOT.kBlack, 2, 2)
 leg1.AddEntry(g_dummy_solid, "Measured",  "l")
 leg1.AddEntry(g_dummy_dash,  "Expected",  "l")
 graphs_keep += [g_dummy_solid, g_dummy_dash]
-leg1.SetTextSize(1.0)
 leg1.SetBorderSize(0)
 
 leg1.Draw()
@@ -222,7 +209,7 @@ g_avg_exp.Draw("L SAME")
 leg2 = ROOT.TLegend(0.55, 0.70, 0.88, 0.88)
 leg2.SetBorderSize(0)
 leg2.SetFillStyle(0)
-leg2.SetTextSize(1.0)
+leg2.SetTextSize(0.001)
 leg2.AddEntry(g_avg_meas, "Mean measured", "l")
 leg2.AddEntry(g_avg_exp,  "Mean expected", "l")
 leg2.Draw()
