@@ -90,7 +90,8 @@ if not clusters:
     sys.exit("No clusters pass the selection cuts.")
 
 # ── Helper: make a TGraph from lists ─────────────────────────────────────────
-def make_graph(x_vals, y_vals, color, line_style=1, line_width=2):
+def make_graph(x_vals, y_vals, color, line_style=1, line_width=2,
+               marker_style=0):
     n = len(x_vals)
     g = ROOT.TGraph(n,
                     array.array('d', x_vals),
@@ -98,7 +99,7 @@ def make_graph(x_vals, y_vals, color, line_style=1, line_width=2):
     g.SetLineColor(color)
     g.SetLineStyle(line_style)
     g.SetLineWidth(line_width)
-    g.SetMarkerSize(0)
+    g.SetMarkerSize(marker_style)
     if g.Integral() > 0:
         g.Scale(1/g.Integral())
     return g
@@ -127,7 +128,8 @@ for idx, cl in enumerate(clusters):
     #y_max_s = max(all_y) * 0.15 if all_y else 1.0
  
  
-    g_s_meas = make_graph(t, cl["measured"], ROOT.kBlue+1, line_style=1, line_width=2)
+    g_s_meas = make_graph(t, cl["measured"], ROOT.kBlue+1, line_style=1,
+                          line_width=2, marker_style=1)
     g_s_exp  = make_graph(t, cl["expected"], ROOT.kRed+1,  line_style=2, line_width=2)
     #g_s_meas.Draw("L SAME")
     #g_s_exp.Draw("L SAME")
@@ -140,7 +142,7 @@ for idx, cl in enumerate(clusters):
     print(y_max_s, g_s_meas.GetMaximum(), g_s_exp.GetMaximum())
 
     frame_s = c_single.DrawFrame(0, 0, x_max_s, y_max_s)
-    frame_s.GetXaxis().SetTitle("Depth (radiation lengths X_{0})")
+    frame_s.GetXaxis().SetTitle("Depth (X_{0})")
     frame_s.GetYaxis().SetTitle("Fractional energy deposit [% / 100  / bin]")
     frame_s.SetTitle(
         f"Cluster {idx}  E={cl['energy']:.3f} GeV  "
@@ -152,7 +154,7 @@ for idx, cl in enumerate(clusters):
     g_s_exp.Draw("L SAME")
 
     leg_s = ROOT.TLegend(0.62, 0.72, 0.88, 0.88)
-    leg_s.SetBorderSize(1)
+    leg_s.SetBorderSize(0)
     leg_s.SetFillStyle(0)
     leg_s.SetTextSize(0.030)
     leg_s.AddEntry(g_s_meas, "Measured", "l")
