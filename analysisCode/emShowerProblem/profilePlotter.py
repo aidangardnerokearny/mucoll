@@ -119,13 +119,24 @@ first_page = True
 print(f"Writing {len(clusters)} individual cluster pages...")
 for idx, cl in enumerate(clusters):
     c_single.Clear()
- 
+    print(cl) 
     t = [i * BIN_WIDTH for i in range(cl["nBins"])]
  
     all_y = cl["measured"] + cl["expected"]
     x_max_s = max(t) * 1.10 if t else 1.0
-    y_max_s = max(all_y) * 0.15 if all_y else 1.0
+    #y_max_s = max(all_y) * 0.15 if all_y else 1.0
  
+ 
+    g_s_meas = make_graph(t, cl["measured"], ROOT.kBlue+1, line_style=1, line_width=2)
+    g_s_exp  = make_graph(t, cl["expected"], ROOT.kRed+1,  line_style=2, line_width=2)
+    g_s_meas.Draw("L SAME")
+    g_s_exp.Draw("L SAME")
+
+    scale_meas = g_s_meas.Integral()
+    scale_exp = g_s_exp.Integral()
+
+    y_max_s = max(g_s_meas.GetMaximum(), g_s_exp.GetMaximum()) * 1.15 if all_y else 1.0
+
     frame_s = c_single.DrawFrame(0, 0, x_max_s, y_max_s)
     frame_s.GetXaxis().SetTitle("Depth (radiation lengths X_{0})")
     frame_s.GetYaxis().SetTitle("Energy deposit [GeV / bin]")
@@ -134,12 +145,7 @@ for idx, cl in enumerate(clusters):
         f"profileStart={cl['profileStart']:.2f} X_{{0}}  "
         f"#chi={cl['profileDisc']:.4f}"
     )
- 
-    g_s_meas = make_graph(t, cl["measured"], ROOT.kBlue+1, line_style=1, line_width=2)
-    g_s_exp  = make_graph(t, cl["expected"], ROOT.kRed+1,  line_style=2, line_width=2)
-    g_s_meas.Draw("L SAME")
-    g_s_exp.Draw("L SAME")
- 
+
     leg_s = ROOT.TLegend(0.62, 0.72, 0.88, 0.88)
     leg_s.SetBorderSize(1)
     leg_s.SetFillStyle(0)
