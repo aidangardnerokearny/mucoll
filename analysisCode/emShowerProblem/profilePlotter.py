@@ -347,7 +347,7 @@ g_ref = make_graph([0, e_max], [0, ref_slope * e_max],
 g_ref.Draw("L SAME")
 
 leg5 = ROOT.TLegend(0.17, 0.75, 0.55, 0.88)
-leg5.SetBorderSize(1)
+leg5.SetBorderSize(0)
 leg5.SetFillStyle(0)
 leg5.AddEntry(g_ref, "Reference: %d hits/GeV" % int(ref_slope), "l")
 leg5.Draw()
@@ -373,7 +373,7 @@ h_e.Draw("HIST")
 # Mark the photon gun energy range
 h_e.GetYaxis().SetRangeUser(0.5, h_e.GetMaximum() * 5)
 line_lo = ROOT.TLine(250,  0.5, 250,  h_e.GetMaximum() * 3)
-line_hi = ROOT.TLine(1000, 0.5, 1000, h_e.GetMaximum() * 3)
+line_hi = ROOT.TLine(1000, 0.5, 1000, h_e.GetMaximum())
 for line in [line_lo, line_hi]:
     line.SetLineColor(ROOT.kRed+1)
     line.SetLineStyle(2)
@@ -381,7 +381,7 @@ for line in [line_lo, line_hi]:
     line.Draw()
 
 leg6 = ROOT.TLegend(0.55, 0.75, 0.88, 0.88)
-leg6.SetBorderSize(1)
+leg6.SetBorderSize(0)
 leg6.SetFillStyle(0)
 leg6.AddEntry(line_lo, "250-1000 GeV gun range", "l")
 leg6.Draw()
