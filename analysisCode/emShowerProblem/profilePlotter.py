@@ -372,7 +372,7 @@ h_e.Draw("HIST")
 
 # Mark the photon gun energy range
 h_e.GetYaxis().SetRangeUser(0.5, h_e.GetMaximum() * 5)
-line_lo = ROOT.TLine(250,  0.5, 250,  h_e.GetMaximum() * 3)
+line_lo = ROOT.TLine(250,  0.5, 250,  h_e.GetMaximum())
 line_hi = ROOT.TLine(1000, 0.5, 1000, h_e.GetMaximum())
 for line in [line_lo, line_hi]:
     line.SetLineColor(ROOT.kRed+1)
@@ -388,8 +388,53 @@ leg6.Draw()
 
 c6.Print(args.output)
 
+# ── Canvas 5pl: Pseudo-Layer distributions (all clusters, log-y) ───────────
+
+c5pl = ROOT.TCanvas("c5pl", "Pseudo-layer distributions", 900, 600)
+c5pl.SetLeftMargin(0.12)
+c5pl.SetBottomMargin(0.12)
+
+il_vals  = [cl["innerLayer"]  for cl in clusters]
+ssl_vals = [cl["showerStart"] for cl in clusters]
+
+layer_max = max(max(il_vals), max(ssl_vals)) * 1.1
+
+h_il = ROOT.TH1F("h_il",
+                 "Cluster and shower start pseudo-layers;"
+                 "Pseudo-layer;Clusters / bin",
+                 80, 0, layer_max)
+h_ssl = ROOT.TH1F("h_ssl", "", 80, 0, layer_max)
+
+h_il.SetLineColor(ROOT.kBlue+1)
+h_il.SetLineWidth(2)
+h_il.SetFillColorAlpha(ROOT.kBlue+1, 0.25)
+
+h_ssl.SetLineColor(ROOT.kRed+1)
+h_ssl.SetLineWidth(2)
+h_ssl.SetFillColorAlpha(ROOT.kRed+1, 0.25)
+
+for v in il_vals:
+    h_il.Fill(v)
+for v in ssl_vals:
+    h_ssl.Fill(v)
+
+y_max_pl = max(h_il.GetMaximum(), h_ssl.GetMaximum()) * 1.15
+h_il.SetMaximum(y_max_pl)
+h_il.Draw("HIST")
+h_ssl.Draw("HIST SAME")
+
+leg5pl = ROOT.TLegend(0.55, 0.72, 0.88, 0.88)
+leg5pl.SetBorderSize(0)
+leg5pl.SetFillStyle(0)
+leg5pl.AddEntry(h_il,  "Inner pseudo-layer (cluster start)", "f")
+leg5pl.AddEntry(h_ssl, "Shower start pseudo-layer",          "f")
+leg5pl.Draw()
+
+c5pl.Print(args.output)
+
+
 # ── Close PDF ─────────────────────────────────────────────────────────────────
-c6.Print(pdf_close)
+c5pl.Print(pdf_close)
 
 tfile.Close()
 
