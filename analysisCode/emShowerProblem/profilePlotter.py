@@ -59,8 +59,18 @@ print(f"Opened {args.input}  ({tree.GetEntries()} entries in '{args.tree}')")
 
 # ── Collect entries that pass selection ───────────────────────────────────────
 clusters = []   # list of dicts, one per passing cluster
+all_clusters = [] #list of dicts, one for each cluster
 
 for entry in tree:
+
+
+    E   = entry.clusterEnergy
+    n_hits = entry.nCaloHits
+
+    #always append these for cluster plotting
+    all_clusters.append({"energy": E, "nCaloHits": n_hits})
+
+    #Only those that pass valid profile and data cuts
     n_bins = entry.nProfileBins
     if n_bins == 0:
         continue
@@ -306,8 +316,80 @@ for v in pd_vals:
 h_pd.Draw("HIST")
 c4.Print(args.output)
 
+# ── Canvas 5: cluster energy vs nCaloHits 2D ─────────────────────────────────
+c5 = ROOT.TCanvas("c5", "Energy vs nCaloHits", 900, 700)
+c5.SetLeftMargin(0.12)
+c5.SetBottomMargin(0.12)
+c5.SetRightMargin(0.15)
+c5.SetLogz(True)
+
+all_E     = [cl["energy"]    for cl in all_clusters]
+all_nhits = [cl["nCaloHits"] for cl in all_clusters]
+
+e_max    = max(all_E)     * 1.05
+hits_max = max(all_nhits) * 1.05
+
+h2 = ROOT.TH2F("h2",
+               "Cluster energy vs number of calo hits;"
+               "Cluster EM energy [GeV];Number of calo hits",
+               100, 0, e_max,
+               100, 0, hits_max)
+h2.SetContour(50)
+for E, nh in zip(all_E, all_nhits):
+    h2.Fill(E, nh)
+h2.Draw("COLZ")
+
+# Reference line: ~30 hits/GeV as a rough lower bound for genuine EM showers
+# Clusters well below this line are likely noise or BIB fragments
+ref_slope = 30.0
+g_ref = make_graph([0, e_max], [0, ref_slope * e_max],
+                   ROOT.kRed+1, line_style=2, line_width=2)
+g_ref.Draw("L SAME")
+
+leg5 = ROOT.TLegend(0.17, 0.75, 0.55, 0.88)
+leg5.SetBorderSize(1)
+leg5.SetFillStyle(0)
+leg5.AddEntry(g_ref, "Reference: %d hits/GeV" % int(ref_slope), "l")
+leg5.Draw()
+
+c5.Print(args.output)
+
+# ── Canvas 6: 1D cluster energy distribution (all clusters, log-y) ───────────
+c6 = ROOT.TCanvas("c6", "Cluster energy distribution", 900, 600)
+c6.SetLeftMargin(0.12)
+c6.SetBottomMargin(0.12)
+c6.SetLogy(True)
+
+h_e = ROOT.TH1F("h_e",
+                "Cluster energy distribution (all clusters);"
+                "Cluster EM energy [GeV];Clusters / bin",
+                100, 0, e_max)
+h_e.SetFillColor(ROOT.kAzure-9)
+h_e.SetLineColor(ROOT.kAzure+1)
+for E in all_E:
+    h_e.Fill(E)
+h_e.Draw("HIST")
+
+# Mark the photon gun energy range
+h_e.GetYaxis().SetRangeUser(0.5, h_e.GetMaximum() * 5)
+line_lo = ROOT.TLine(250,  0.5, 250,  h_e.GetMaximum() * 3)
+line_hi = ROOT.TLine(1000, 0.5, 1000, h_e.GetMaximum() * 3)
+for line in [line_lo, line_hi]:
+    line.SetLineColor(ROOT.kRed+1)
+    line.SetLineStyle(2)
+    line.SetLineWidth(2)
+    line.Draw()
+
+leg6 = ROOT.TLegend(0.55, 0.75, 0.88, 0.88)
+leg6.SetBorderSize(1)
+leg6.SetFillStyle(0)
+leg6.AddEntry(line_lo, "250-1000 GeV gun range", "l")
+leg6.Draw()
+
+c6.Print(args.output)
+
 # ── Close PDF ─────────────────────────────────────────────────────────────────
-c4.Print(pdf_close)
+c6.Print(pdf_close)
 
 tfile.Close()
 
