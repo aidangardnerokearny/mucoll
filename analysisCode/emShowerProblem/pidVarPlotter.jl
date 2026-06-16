@@ -82,12 +82,18 @@ ph_rrms = Float64[]; oth_rrms = Float64[]
 
 n_no_pdg = 0
 
+n_dropped_ps = 0
 for row in tree
     E = Float64(row.clusterEnergy)
+    # inside loop, before the continue:
+    if row.profileStart <= 0
+        n_dropped_ps += 1
+        continue
+    end
     (E < energy_min || E > energy_max) && continue
-    row.profileStart <= 0               && continue
-    row.nProfileBins == 0               && continue
-
+    #row.profileStart <= 0               && continue
+    #row.nProfileBins == 0               && continue
+    
     # pdgCode is 0 if branch was missing (UnROOT returns default)
     pdg = Int(row.pdgCode)
     if pdg == 0
@@ -108,12 +114,15 @@ for row in tree
         has_peakrms  && push!(ph_prms, prms)
         has_rrms && push!(ph_rrms, rrms)
     else
+        println(pdg)
         push!(oth_ps,  ps);  push!(oth_pd,  pd)
         push!(oth_e,   E);   push!(oth_sso, sso)
         has_peakrms  && push!(oth_prms, prms)
         has_rrms && push!(oth_rrms, rrms)
     end
 end
+
+println(n_dropped_ps)
 
 n_no_pdg > 0 && println("WARNING: $n_no_pdg entries had pdgCode=0 — assigned to 'other'")
 n_ph  = length(ph_ps)
