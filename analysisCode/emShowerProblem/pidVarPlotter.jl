@@ -300,9 +300,20 @@ end
 println(pages)
 
 # ── Save to PDF ────────────────────────────────────────────────────────────────
+#println("Saving $(length(pages)) pages to $output_file ...")
+#savefig(pages[1], output_file)
+#for p in pages[2:end]
+#    savefig(p, output_file)
+#end
+#println("Saved $output_file")
+#
 println("Saving $(length(pages)) pages to $output_file ...")
-savefig(pages[1], output_file)
-for p in pages[2:end]
-    savefig(p, output_file)
+mkpath(dirname(abspath(output_file)))
+
+gr()
+Plots.GR.beginprint(output_file)
+for p in pages
+    display(p)
 end
+Plots.GR.endprint()
 println("Saved $output_file")
