@@ -1,5 +1,5 @@
 """
-plot_pid_separation.jl
+pidVarPlotter.jl
 
 Plots the 4 shower-profile classifier variables available in the tree,
 split by whether the PFO was tagged as a photon (pdgCode == 22) or
@@ -297,6 +297,7 @@ if has_peakrms && has_rrms
     ))
 end
 
+println(pages)
 
 # ── Save to PDF ────────────────────────────────────────────────────────────────
 println("Saving $(length(pages)) pages to $output_file ...")
