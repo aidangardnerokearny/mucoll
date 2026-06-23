@@ -1,0 +1,25 @@
+Universe = Vanilla
+GEOM = /home/aidangardnerokearny/k4geo/MuColl/MAIA/compact/MAIA_v0/MAIA_v0_vacuum.xml
+TAG  = vacuum
+
+Executable = "/home/aidangardnerokearny/mucoll/jobs/run_sim.sh"
+Arguments = $(GEOM) $(TAG) $(Process)
+
+requirements = HAS_CVMFS_sw_hsf_org == True
+
+
+should_transfer_files   = YES
+when_to_transfer_output = ON_EXIT
+transfer_input_files = ~/mucoll/.setup_shower_profiles.sh ~/mucoll/gen/photonGun_E_25.slcio ~/mucoll/k4geo/MuColl/MAIA/compact/MAIA_v0/
+
+
+# --- logs ---
+output = logs/$(TAG)_$(Cluster)_$(Process).out
+error  = logs/$(TAG)_$(Cluster)_$(Process).err
+log    = logs/$(TAG)_$(Cluster).log
+
+# --- resources (tune from a test job) ---
+request_cpus   = 1
+request_memory = 4GB
+request_disk   = 4GB
++JobDurationCategory = "Medium"
