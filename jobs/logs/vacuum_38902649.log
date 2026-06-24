@@ -48,3 +48,6 @@
 	Transfer output files failure at the execution point while sending files to access point ap23. Details: 1 total failures: first failure: reading from file /local/scratch/glide_FtXjT5/execute/dir_2533136/scratch/sim_vacuum_0.slcio: (errno 2) No such file or directory
 	Code 12 Subcode 2
 ...
+009 (38902649.000.000) 2026-06-24 10:55:05 Job was aborted.
+	via condor_rm (by user aidangardnerokearny)
+...

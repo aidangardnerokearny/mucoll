@@ -8,9 +8,6 @@ INPUT_FILE=$2
 OUTPUT_FILE=$3
 COMPACT_FILE=$4
 
-
-source .setup_shower_monitoring.sh
-
 echo "Using compact file: ${COMPACT_FILE}"
 echo "Job ${Job_NUM}"
 echo "Input: ${INPUT_FILE}"
@@ -28,3 +25,7 @@ ddsim \
 	--compactFile ${COMPACT_FILE} \
 	--skipNEvents ${SKIP} \
 	--random.seed $((JOB_NUM + 1)) \\
+
+
+echo "=== Done; wrote ${OUTPUT_FILE} === "
+ls -lh "${OUTPUT_FILE}"
