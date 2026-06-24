@@ -9,7 +9,7 @@ OUTPUT_FILE=$3
 COMPACT_FILE=$4
 
 
-source ~/mucoll/.setup_shower_profile.sh
+source .setup_shower_monitoring.sh
 
 echo "Using compact file: ${COMPACT_FILE}"
 echo "Job ${Job_NUM}"
@@ -17,12 +17,12 @@ echo "Input: ${INPUT_FILE}"
 echo "Outpit: ${OUTPUT_FILE}"
 which ddsim
 
-NEVENTS = 1000
+NEVENTS=1000
 SKIP=$((JOB_NUM * NEVENTS))
 
 ddsim \
 	--inputFile ${INPUT_FILE} \
-	--steeringFile sim_steer_condor.py \
+	--steeringFile sim_steer_GEN_CONDOR.py \
 	--outputFile ${OUTPUT_FILE} \
 	--numberOfEvents ${NEVENTS} \
 	--compactFile ${COMPACT_FILE} \
