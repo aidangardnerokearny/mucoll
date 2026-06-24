@@ -11,7 +11,8 @@ Arguments = $(Process) photonGun_E_25.slcio sim_$(Tag)_$(Process).slcio $(GEOM)
 # --- inputs ---
 should_transfer_files   = YES
 when_to_transfer_output = ON_EXIT
-transfer_input_files = $ENV(HOME)/mucoll/gen/photonGun_E_25.slcio, $ENV(HOME)/mucoll/SteeringMacros/Sim/sim_steer_GEN_CONDOR.py, $ENV(HOME)/mucoll/k4geo/MuColl/MAIA/compact/MAIA_v0/
+transfer_input_files = $ENV(HOME)/mucoll/gen/photonGun_E_25.slcio, $ENV(HOME)/mucoll/SteeringMacros/Sim/sim_steer_GEN_CONDOR.py, $ENV(HOME)/mucoll/k4geo/MuColl/MAIA/compact/MAIA_v0/MAIA_v0_vacuum.xml
+
 
 # --- outputs ---
 transfer_output_files = sim_$(TAG)_$(Process).slcio

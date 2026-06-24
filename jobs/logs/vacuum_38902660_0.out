@@ -1,0 +1,469 @@
+=== job 0 on comp-cc-0453 at Wed Jun 24 14:03:11 EDT 2026 ===
+compact: MAIA_v0/MAIA_v0_vacuum.xml   input: photonGun_E_25.slcio   skip: 0
+/opt/spack/opt/spack/__spack_path_placeholder__/__spack_path_placeholder__/__spack_path_placeholder__/__spack_path_placeholder__/linux-x86_64/dd4hep-1.32.1-6xccwvvjhkgswcovflawvlg4qh7b2xlp/bin/ddsim
+usage: Running DD4hep Simulations: [-h] [--steeringFile STEERINGFILE]
+                                   [--compactFile COMPACTFILE [COMPACTFILE ...]]
+                                   [--runType {batch,vis,run,shell,qt}]
+                                   [--inputFiles INPUTFILES [INPUTFILES ...]]
+                                   [--outputFile OUTPUTFILE]
+                                   [-v {1,2,3,4,5,6,7,VERBOSE,DEBUG,INFO,WARNING,ERROR,FATAL,ALWAYS}]
+                                   [--numberOfEvents NUMBEROFEVENTS]
+                                   [--skipNEvents SKIPNEVENTS]
+                                   [--physicsList PHYSICSLIST]
+                                   [--crossingAngleBoost CROSSINGANGLEBOOST]
+                                   [--vertexSigma X Y Z T]
+                                   [--vertexOffset X Y Z T]
+                                   [--macroFile MACROFILE] [--enableGun]
+                                   [--enableG4GPS] [--enableG4Gun]
+                                   [--dumpParameter]
+                                   [--enableDetailedShowerMode]
+                                   [--disableSignalHandler]
+                                   [--dumpSteeringFile]
+                                   [--output.geometry {1,2,3,4,5,6,7,VERBOSE,DEBUG,INFO,WARNING,ERROR,FATAL,ALWAYS}]
+                                   [--output.inputStage {1,2,3,4,5,6,7,VERBOSE,DEBUG,INFO,WARNING,ERROR,FATAL,ALWAYS}]
+                                   [--output.kernel {1,2,3,4,5,6,7,VERBOSE,DEBUG,INFO,WARNING,ERROR,FATAL,ALWAYS}]
+                                   [--output.part {1,2,3,4,5,6,7,VERBOSE,DEBUG,INFO,WARNING,ERROR,FATAL,ALWAYS}]
+                                   [--output.physics {0,1,2}]
+                                   [--output.random {1,2,3,4,5,6,7,VERBOSE,DEBUG,INFO,WARNING,ERROR,FATAL,ALWAYS}]
+                                   [--random.seed RANDOM.SEED]
+                                   [--random.type RANDOM.TYPE]
+                                   [--random.luxury RANDOM.LUXURY]
+                                   [--random.replace_gRandom RANDOM.REPLACE_GRANDOM]
+                                   [--random.file RANDOM.FILE]
+                                   [--random.enableEventSeed]
+                                   [--gun.particle GUN.PARTICLE]
+                                   [--gun.multiplicity GUN.MULTIPLICITY]
+                                   [--gun.phiMin GUN.PHIMIN]
+                                   [--gun.phiMax GUN.PHIMAX]
+                                   [--gun.thetaMin GUN.THETAMIN]
+                                   [--gun.thetaMax GUN.THETAMAX]
+                                   [--gun.etaMin GUN.ETAMIN]
+                                   [--gun.etaMax GUN.ETAMAX]
+                                   [--gun.momentumMin GUN.MOMENTUMMIN]
+                                   [--gun.momentumMax GUN.MOMENTUMMAX]
+                                   [--gun.energy GUN.ENERGY]
+                                   [--gun.direction GUN.DIRECTION]
+                                   [--gun.distribution {uniform,cos(theta),eta,pseudorapidity,ffbar}]
+                                   [--gun.isotrop GUN.ISOTROP]
+                                   [--gun.position GUN.POSITION]
+                                   [--part.enableDetailedHitsAndParticleInfo]
+                                   [--part.keepAllParticles PART.KEEPALLPARTICLES]
+                                   [--part.minDistToParentVertex PART.MINDISTTOPARENTVERTEX]
+                                   [--part.minimalKineticEnergy PART.MINIMALKINETICENERGY]
+                                   [--part.printEndTracking PART.PRINTENDTRACKING]
+                                   [--part.printStartTracking PART.PRINTSTARTTRACKING]
+                                   [--part.saveProcesses PART.SAVEPROCESSES]
+                                   [--part.userParticleHandler PART.USERPARTICLEHANDLER]
+                                   [--field.stepper FIELD.STEPPER]
+                                   [--field.equation FIELD.EQUATION]
+                                   [--field.eps_min FIELD.EPS_MIN]
+                                   [--field.eps_max FIELD.EPS_MAX]
+                                   [--field.min_chord_step FIELD.MIN_CHORD_STEP]
+                                   [--field.delta_chord FIELD.DELTA_CHORD]
+                                   [--field.delta_intersection FIELD.DELTA_INTERSECTION]
+                                   [--field.delta_one_step FIELD.DELTA_ONE_STEP]
+                                   [--field.largest_step FIELD.LARGEST_STEP]
+                                   [--action.calo ACTION.CALO]
+                                   [--action.calorimeterSDTypes ACTION.CALORIMETERSDTYPES]
+                                   [--action.event ACTION.EVENT]
+                                   [--action.mapActions ACTION.MAPACTIONS]
+                                   [--action.run ACTION.RUN]
+                                   [--action.stack ACTION.STACK]
+                                   [--action.step ACTION.STEP]
+                                   [--action.track ACTION.TRACK]
+                                   [--action.tracker ACTION.TRACKER]
+                                   [--action.trackerSDTypes ACTION.TRACKERSDTYPES]
+                                   [--outputConfig.forceDD4HEP]
+                                   [--outputConfig.forceEDM4HEP]
+                                   [--outputConfig.forceLCIO]
+                                   [--outputConfig.userOutputPlugin OUTPUTCONFIG.USEROUTPUTPLUGIN]
+                                   [--inputConfig.userInputPlugin INPUTCONFIG.USERINPUTPLUGIN]
+                                   [--guineapig._parameters GUINEAPIG._PARAMETERS]
+                                   [--guineapig.particlesPerEvent GUINEAPIG.PARTICLESPEREVENT]
+                                   [--lcio._parameters LCIO._PARAMETERS]
+                                   [--lcio.mcParticleCollectionName LCIO.MCPARTICLECOLLECTIONNAME]
+                                   [--hepmc3.Flow1 HEPMC3.FLOW1]
+                                   [--hepmc3.Flow2 HEPMC3.FLOW2]
+                                   [--hepmc3._parameters HEPMC3._PARAMETERS]
+                                   [--hepmc3.useHepMC3 HEPMC3.USEHEPMC3]
+                                   [--meta.eventParameters META.EVENTPARAMETERS [META.EVENTPARAMETERS ...]]
+                                   [--meta.runNumberOffset META.RUNNUMBEROFFSET]
+                                   [--meta.eventNumberOffset META.EVENTNUMBEROFFSET]
+                                   [--geometry.enableDebugMaterials]
+                                   [--geometry.enableDebugElements]
+                                   [--geometry.enableDebugVolumes]
+                                   [--geometry.enableDebugShapes]
+                                   [--geometry.enableDebugPlacements]
+                                   [--geometry.enableDebugReflections]
+                                   [--geometry.enableDebugRegions]
+                                   [--geometry.enableDebugSurfaces]
+                                   [--geometry.dumpHierarchy GEOMETRY.DUMPHIERARCHY]
+                                   [--geometry.enablePrintPlacements]
+                                   [--geometry.enablePrintSensitives]
+                                   [--geometry.dumpGDML GEOMETRY.DUMPGDML]
+                                   [--geometry.regexSensitiveDetector GEOMETRY.REGEXSENSITIVEDETECTOR]
+                                   [--filter.calo FILTER.CALO]
+                                   [--filter.filters FILTER.FILTERS]
+                                   [--filter.mapDetFilter FILTER.MAPDETFILTER]
+                                   [--filter.tracker FILTER.TRACKER]
+                                   [--physics.alternativeDecayStatuses PHYSICS.ALTERNATIVEDECAYSTATUSES]
+                                   [--physics.alternativeStableStatuses PHYSICS.ALTERNATIVESTABLESTATUSES]
+                                   [--physics.decays PHYSICS.DECAYS]
+                                   [--physics.list PHYSICS.LIST]
+                                   [--physics.pdgfile PHYSICS.PDGFILE]
+                                   [--physics.rangecut PHYSICS.RANGECUT]
+                                   [--physics.rejectPDGs PHYSICS.REJECTPDGS]
+                                   [--physics.zeroTimePDGs PHYSICS.ZEROTIMEPDGS]
+                                   [--ui.commandsConfigure UI.COMMANDSCONFIGURE]
+                                   [--ui.commandsInitialize UI.COMMANDSINITIALIZE]
+                                   [--ui.commandsPostRun UI.COMMANDSPOSTRUN]
+                                   [--ui.commandsPreRun UI.COMMANDSPRERUN]
+                                   [--ui.commandsTerminate UI.COMMANDSTERMINATE]
+
+options:
+  -h, --help            show this help message and exit
+  --steeringFile STEERINGFILE, -S STEERINGFILE
+                        Steering file to change default behaviour
+  --compactFile COMPACTFILE [COMPACTFILE ...]
+                        The compact XML file, or multiple compact files, if the last one is the closer.
+  --runType {batch,vis,run,shell,qt}
+                        The type of action to do in this invocation
+                        batch: just simulate some events, needs numberOfEvents, and input file or gun
+                        vis: enable visualisation, run the macroFile if it is set
+                        qt: enable visualisation in Qt shell, run the macroFile if it is set
+                        run: run the macroFile and exit
+                        shell: enable interactive session
+  --inputFiles INPUTFILES [INPUTFILES ...], -I INPUTFILES [INPUTFILES ...]
+                        InputFiles for simulation .stdhep, .slcio, .HEPEvt, .hepevt, .pairs, .hepmc, .hepmc.gz, .hepmc.xz, .hepmc.bz2, .hepmc3, .hepmc3.gz, .hepmc3.xz, .hepmc3.bz2, .hepmc3.tree.root, .root, .sio files are supported
+  --outputFile OUTPUTFILE, -O OUTPUTFILE
+                        Outputfile from the simulation: .slcio, edm4hep.root and .root output files are supported
+  -v {1,2,3,4,5,6,7,VERBOSE,DEBUG,INFO,WARNING,ERROR,FATAL,ALWAYS}, --printLevel {1,2,3,4,5,6,7,VERBOSE,DEBUG,INFO,WARNING,ERROR,FATAL,ALWAYS}
+                        Verbosity use integers from 1(most) to 7(least) verbose
+                        or strings: VERBOSE, DEBUG, INFO, WARNING, ERROR, FATAL, ALWAYS
+  --numberOfEvents NUMBEROFEVENTS, -N NUMBEROFEVENTS
+                        number of events to simulate, used in batch mode
+  --skipNEvents SKIPNEVENTS
+                        Skip first N events when reading a file
+  --physicsList PHYSICSLIST
+                        Physics list to use in simulation
+  --crossingAngleBoost CROSSINGANGLEBOOST
+                        Lorentz boost for the crossing angle, in radian!
+  --vertexSigma X Y Z T
+                        FourVector of the Sigma for the Smearing of the Vertex position: x y z t
+  --vertexOffset X Y Z T
+                        FourVector of translation for the Smearing of the Vertex position: x y z t
+  --macroFile MACROFILE, -M MACROFILE
+                        Macro file to execute for runType 'run' or 'vis'
+  --enableGun, -G       enable the DDG4 particle gun
+  --enableG4GPS         enable the Geant4 GeneralParticleSource. Needs a macroFile (runType run)or use it with the shell (runType shell)
+  --enableG4Gun         enable the Geant4 particle gun. Needs a macroFile (runType run) or use it with the shell (runType shell)
+  --dumpParameter, --dump
+                        Print all configuration Parameters and exit
+  --enableDetailedShowerMode
+                        use detailed shower mode
+  --disableSignalHandler
+                        disable the Signal Handler of DD4hep
+  --dumpSteeringFile    print an example steering file to stdout
+  --output.geometry {1,2,3,4,5,6,7,VERBOSE,DEBUG,INFO,WARNING,ERROR,FATAL,ALWAYS}
+                        Output level for geometry.
+  --output.inputStage {1,2,3,4,5,6,7,VERBOSE,DEBUG,INFO,WARNING,ERROR,FATAL,ALWAYS}
+                        Output level for input sources
+  --output.kernel {1,2,3,4,5,6,7,VERBOSE,DEBUG,INFO,WARNING,ERROR,FATAL,ALWAYS}
+                        Output level for Geant4 kernel
+  --output.part {1,2,3,4,5,6,7,VERBOSE,DEBUG,INFO,WARNING,ERROR,FATAL,ALWAYS}
+                        Output level for ParticleHandler
+  --output.physics {0,1,2}
+                        Output level for physics and physics constructors: 0 (silent), 1, 2
+  --output.random {1,2,3,4,5,6,7,VERBOSE,DEBUG,INFO,WARNING,ERROR,FATAL,ALWAYS}
+                        Output level for Random Number Generator setup
+  --random.seed RANDOM.SEED
+  --random.type RANDOM.TYPE
+  --random.luxury RANDOM.LUXURY
+  --random.replace_gRandom RANDOM.REPLACE_GRANDOM
+  --random.file RANDOM.FILE
+  --random.enableEventSeed
+                        If True, calculate random seed for each event basedon eventID and runID
+                        Allows reproducibility even whenSkippingEvents
+  --gun.particle GUN.PARTICLE
+  --gun.multiplicity GUN.MULTIPLICITY
+  --gun.phiMin GUN.PHIMIN
+                        Minimal azimuthal angle for random distribution
+  --gun.phiMax GUN.PHIMAX
+                        Maximal azimuthal angle for random distribution
+  --gun.thetaMin GUN.THETAMIN
+                        Minimal polar angle for random distribution
+  --gun.thetaMax GUN.THETAMAX
+                        Maximal polar angle for random distribution
+  --gun.etaMin GUN.ETAMIN
+                        Minimal pseudorapidity for random distibution (overrides thetaMax)
+  --gun.etaMax GUN.ETAMAX
+                        Maximal pseudorapidity for random distibution (overrides thetaMin)
+  --gun.momentumMin GUN.MOMENTUMMIN
+                        Minimal momentum when using distribution (default = 0.0)
+  --gun.momentumMax GUN.MOMENTUMMAX
+                        Maximal momentum when using distribution (default = 0.0)
+  --gun.energy GUN.ENERGY
+                        Total energy (including mass) for the particle gun.
+                        
+                        If not None, it will overwrite the setting of momentumMin and momentumMax
+  --gun.direction GUN.DIRECTION
+                         direction of the particle gun, 3 vector 
+  --gun.distribution {uniform,cos(theta),eta,pseudorapidity,ffbar}
+                        choose the distribution of the random direction for theta
+                        
+                            Options for random distributions:
+                        
+                            'uniform' is the default distribution, flat in theta
+                            'cos(theta)' is flat in cos(theta)
+                            'eta', or 'pseudorapidity' is flat in pseudorapity
+                            'ffbar' is distributed according to 1+cos^2(theta)
+                        
+                            Setting a distribution will set isotrop = True
+                            
+  --gun.isotrop GUN.ISOTROP
+                         isotropic distribution for the particle gun
+                        
+                            use the options phiMin, phiMax, thetaMin, and thetaMax to limit the range of randomly distributed directions
+                            if one of these options is not None the random distribution will be set to True and cannot be turned off!
+                            
+  --gun.position GUN.POSITION
+                         position of the particle gun, 3 vector 
+  --part.enableDetailedHitsAndParticleInfo
+                        Enable lots of printout on simulated hits and MC-truth information
+  --part.keepAllParticles PART.KEEPALLPARTICLES
+                         Keep all created particles 
+  --part.minDistToParentVertex PART.MINDISTTOPARENTVERTEX
+                        Minimal distance between particle vertex and endpoint of parent after
+                            which the vertexIsNotEndpointOfParent flag is set
+                            
+  --part.minimalKineticEnergy PART.MINIMALKINETICENERGY
+                        MinimalKineticEnergy to store particles created in the tracking region
+  --part.printEndTracking PART.PRINTENDTRACKING
+                         Printout at End of Tracking 
+  --part.printStartTracking PART.PRINTSTARTTRACKING
+                         Printout at Start of Tracking 
+  --part.saveProcesses PART.SAVEPROCESSES
+                        List of processes to save, on command line give as whitespace separated string in quotation marks
+  --part.userParticleHandler PART.USERPARTICLEHANDLER
+                        Optionally enable an extended Particle Handler
+  --field.stepper FIELD.STEPPER
+  --field.equation FIELD.EQUATION
+  --field.eps_min FIELD.EPS_MIN
+  --field.eps_max FIELD.EPS_MAX
+  --field.min_chord_step FIELD.MIN_CHORD_STEP
+  --field.delta_chord FIELD.DELTA_CHORD
+  --field.delta_intersection FIELD.DELTA_INTERSECTION
+  --field.delta_one_step FIELD.DELTA_ONE_STEP
+  --field.largest_step FIELD.LARGEST_STEP
+  --action.calo ACTION.CALO
+                         set the default calorimeter action 
+  --action.calorimeterSDTypes ACTION.CALORIMETERSDTYPES
+                        List of patterns matching sensitive detectors of type Calorimeter.
+  --action.event ACTION.EVENT
+                         set the default event action 
+  --action.mapActions ACTION.MAPACTIONS
+                        Create a map of patterns and actions to be applied to sensitive detectors.
+                        
+                            Example: if the name of the detector matches 'tpc' the TPCSDAction is used.
+                        
+                              SIM.action.mapActions['tpc'] = "TPCSDAction"
+                            
+  --action.run ACTION.RUN
+                         set the default run action 
+  --action.stack ACTION.STACK
+                         set the default stack action 
+  --action.step ACTION.STEP
+                         set the default step action 
+  --action.track ACTION.TRACK
+                         set the default track action 
+  --action.tracker ACTION.TRACKER
+                         set the default tracker action 
+  --action.trackerSDTypes ACTION.TRACKERSDTYPES
+                        List of patterns matching sensitive detectors of type Tracker.
+  --outputConfig.forceDD4HEP
+                        Use the DD4HEP output plugin regardless of outputfilename.
+  --outputConfig.forceEDM4HEP
+                        Use the EDM4HEP output plugin regardless of outputfilename.
+  --outputConfig.forceLCIO
+                        Use the LCIO output plugin regardless of outputfilename.
+  --outputConfig.userOutputPlugin OUTPUTCONFIG.USEROUTPUTPLUGIN
+                        Set a function to configure the outputFile.
+                        
+                            The function must take a ``DD4hepSimulation`` object as its only argument and return ``None``.
+                        
+                            For example one can add this to the ddsim steering file:
+                        
+                              def exampleUserPlugin(dd4hepSimulation):
+                                '''Example code for user created plugin.
+                        
+                                :param DD4hepSimulation dd4hepSimulation: The DD4hepSimulation instance, so all parameters can be accessed
+                                :return: None
+                                '''
+                                from DDG4 import EventAction, Kernel
+                                dd = dd4hepSimulation  # just shorter variable name
+                                evt_root = EventAction(Kernel(), 'Geant4Output2ROOT/' + dd.outputFile, True)
+                                evt_root.HandleMCTruth = True or False
+                                evt_root.Control = True
+                                output = dd.outputFile
+                                if not dd.outputFile.endswith(dd.outputConfig.myExtension):
+                                  output = dd.outputFile + dd.outputConfig.myExtension
+                                evt_root.Output = output
+                                evt_root.enableUI()
+                                Kernel().eventAction().add(evt_root)
+                                return None
+                        
+                              SIM.outputConfig.userOutputPlugin = exampleUserPlugin
+                              # arbitrary options can be created and set via the steering file or command line
+                              SIM.outputConfig.myExtension = '.csv'
+                            
+  --inputConfig.userInputPlugin INPUTCONFIG.USERINPUTPLUGIN
+                        Set one or more functions to configure input steps.
+                        
+                            The functions must take a ``DD4hepSimulation`` object as their only argument and return the created generatorAction
+                            ``gen`` (for example).
+                        
+                            For example one can add this to the ddsim steering file:
+                        
+                              def exampleUserPlugin(dd4hepSimulation):
+                                '''Example code for user created plugin.
+                        
+                                :param DD4hepSimulation dd4hepSimulation: The DD4hepSimulation instance, so all parameters can be accessed
+                                :return: GeneratorAction
+                                '''
+                                from DDG4 import GeneratorAction, Kernel
+                                # Geant4InputAction is the type of plugin, Cry1 just an identifier
+                                gen = GeneratorAction(Kernel(), 'Geant4InputAction/Cry1' , True)
+                                # CRYEventReader is the actual plugin, steeringFile its constructor parameter
+                                gen.Input = 'CRYEventReader|' + 'steeringFile'
+                                # we can give a dictionary of Parameters that has to be interpreted by the setParameters function of the plugin
+                                gen.Parameters = {'DataFilePath': '/path/to/files/data'}
+                                gen.enableUI()
+                                return gen
+                        
+                              SIM.inputConfig.userInputPlugin = exampleUserPlugin
+                        
+                            Repeat function definition and assignment to add multiple input steps
+                        
+                            
+  --guineapig._parameters GUINEAPIG._PARAMETERS
+  --guineapig.particlesPerEvent GUINEAPIG.PARTICLESPEREVENT
+                        Set the number of pair particles to simulate per event.
+                            Only used if inputFile ends with ".pairs"
+                            If "-1" all particles will be simulated in a single event
+                            
+  --lcio._parameters LCIO._PARAMETERS
+  --lcio.mcParticleCollectionName LCIO.MCPARTICLECOLLECTIONNAME
+                        Set the name of the collection containing the MCParticle input.
+                            Default is "MCParticle".
+                            
+  --hepmc3.Flow1 HEPMC3.FLOW1
+                        Set the name of the attribute contraining color flow information index 0.
+  --hepmc3.Flow2 HEPMC3.FLOW2
+                        Set the name of the attribute contraining color flow information index 1.
+  --hepmc3._parameters HEPMC3._PARAMETERS
+  --hepmc3.useHepMC3 HEPMC3.USEHEPMC3
+                        Set to false if the input should be opened with the hepmc2 ascii reader.
+                        
+                            If ``True`` a  '.hepmc' file will be opened with the HEPMC3 Reader Factory.
+                        
+                            Defaults to true if DD4hep was build with HEPMC3 support.
+                            
+  --meta.eventParameters META.EVENTPARAMETERS [META.EVENTPARAMETERS ...]
+                        Event parameters to write in every event. Use C/F/I ids to specify parameter type. E.g parameterName/F=0.42 to set a float parameter
+  --meta.runNumberOffset META.RUNNUMBEROFFSET
+                        The run number offset to write in slcio output file. E.g setting it to 42 will start counting runs from 42 instead of 0
+  --meta.eventNumberOffset META.EVENTNUMBEROFFSET
+                        The event number offset to write in slcio output file. E.g setting it to 42 will start counting events from 42 instead of 0
+  --geometry.enableDebugMaterials
+                        Print Debug information about Materials
+  --geometry.enableDebugElements
+                        Print Debug information about Elements
+  --geometry.enableDebugVolumes
+                        Print Debug information about Volumes
+  --geometry.enableDebugShapes
+                        Print Debug information about Shapes
+  --geometry.enableDebugPlacements
+                        Print Debug information about Placements
+  --geometry.enableDebugReflections
+                        Print Debug information about Reflections
+  --geometry.enableDebugRegions
+                        Print Debug information about Regions
+  --geometry.enableDebugSurfaces
+                        Print Debug information about Surfaces
+  --geometry.dumpHierarchy GEOMETRY.DUMPHIERARCHY
+  --geometry.enablePrintPlacements
+                        Print information about placements
+  --geometry.enablePrintSensitives
+                        Print information about Sensitives
+  --geometry.dumpGDML GEOMETRY.DUMPGDML
+  --geometry.regexSensitiveDetector GEOMETRY.REGEXSENSITIVEDETECTOR
+                         The map key is the name of the Detector, and 'Match' is a mandatory elements of the dictionary, other Keys are
+                                assigned as property to the object. OutputLevel _sets_ the outputlevel of the plugin, so lower numbers mean more
+                                output from the plugin.
+                        
+                                >>> SIM.geometry.regexSensitiveDetector['DRcalo'] = {
+                                                                           'Match': ['(core|clad)'],
+                                                                           'OutputLevel': 3,
+                                                                          }
+                            
+  --filter.calo FILTER.CALO
+                        
+                            default filter for calorimeter sensitive detectors;
+                            this is applied if no other filter is used for a calorimeter
+                            
+  --filter.filters FILTER.FILTERS
+                         list of filter objects: map between name and parameter dictionary 
+  --filter.mapDetFilter FILTER.MAPDETFILTER
+                         a map between patterns and filter objects, using patterns to attach filters to sensitive detector 
+  --filter.tracker FILTER.TRACKER
+                         default filter for tracking sensitive detectors; this is applied if no other filter is used for a tracker
+  --physics.alternativeDecayStatuses PHYSICS.ALTERNATIVEDECAYSTATUSES
+                        Set of Generator Statuses that are used to mark unstable particles that should decay inside of Geant4.
+                            
+  --physics.alternativeStableStatuses PHYSICS.ALTERNATIVESTABLESTATUSES
+                        Set of Generator Statuses that are used to mark stable particles that should be forwarded to Geant4.
+                            
+  --physics.decays PHYSICS.DECAYS
+                        If true, add decay processes for all particles.
+                        
+                            Only enable when creating a physics list not based on an existing Geant4 list!
+                            
+  --physics.list PHYSICS.LIST
+                        The name of the Geant4 Physics list.
+  --physics.pdgfile PHYSICS.PDGFILE
+                         location of particle.tbl file containing extra particles and their lifetime information
+                        
+                            For example in $DD4HEP/examples/DDG4/examples/particle.tbl
+                            
+  --physics.rangecut PHYSICS.RANGECUT
+                         The global geant4 rangecut for secondary production
+                        
+                            Default is 0.7 mm as is the case in geant4 10
+                        
+                            To disable this plugin and be absolutely sure to use the Geant4 default range cut use "None"
+                        
+                            Set printlevel to DEBUG to see a printout of all range cuts,
+                            but this only works if range cut is not "None"
+                            
+  --physics.rejectPDGs PHYSICS.REJECTPDGS
+                        Set of PDG IDs that will not be passed from the input record to Geant4.
+                        
+                            Quarks, gluons and W's Z's etc should not be treated by Geant4
+                            
+  --physics.zeroTimePDGs PHYSICS.ZEROTIMEPDGS
+                        Set of PDG IDs for particles that should not be passed to Geant4 if their properTime is 0.
+                        
+                            The properTime of 0 indicates a documentation to add FSR to a lepton for example.
+                            
+  --ui.commandsConfigure UI.COMMANDSCONFIGURE
+                        List of UI commands to run during the 'Configure' phase.
+  --ui.commandsInitialize UI.COMMANDSINITIALIZE
+                        List of UI commands to run during the 'Initialize' phase.
+  --ui.commandsPostRun UI.COMMANDSPOSTRUN
+                        List of UI commands to run during the 'PostRun' phase.
+  --ui.commandsPreRun UI.COMMANDSPRERUN
+                        List of UI commands to run during the 'PreRun' phase.
+  --ui.commandsTerminate UI.COMMANDSTERMINATE
+                        List of UI commands to run during the 'Terminate' phase.
+
+ERROR: The compactfile 'MAIA_v0/MAIA_v0_vacuum.xml' does not exist

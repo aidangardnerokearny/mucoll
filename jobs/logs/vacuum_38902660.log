@@ -1,0 +1,50 @@
+000 (38902660.000.000) 2026-06-24 13:02:35 Job submitted from host: <192.170.231.144:9618?addrs=192.170.231.144-9618+[2605-9a00-10-200b-192-170-231-144]-9618&alias=ap23.uc.osg-htc.org&noUDP&sock=schedd_6365_7066>
+...
+040 (38902660.000.000) 2026-06-24 13:03:08 Started transferring input files
+	Transferring to host: <10.136.81.223:34373?CCBID=128.105.82.148:9618%3faddrs%3d128.105.82.148-9618+[2607-f388-2200-9d-7ccb-bc08-2489-7689]-9618%26alias%3dospool-ccb.osg.chtc.io%26noUDP%26sock%3dcollector7#4710401%2067.58.49.91:9618%3faddrs%3d67.58.49.91-9618+[fdf0-17b3-c3ec-1f79-10-0-d-2091]-9618%26alias%3dccb-2.ospool.osg-htc.org%26noUDP%26sock%3dcollector5#4708974&PrivNet=comp-cc-0453&addrs=10.136.81.223-34373&alias=comp-cc-0453&noUDP>
+...
+040 (38902660.000.000) 2026-06-24 13:03:08 Finished transferring input files
+...
+021 (38902660.000.000) 2026-06-24 13:03:08 Message from starter on slot1_4@glidein_1267394_485238820@comp-cc-0453:
+	PREPARE_JOB (prepare-hook) succeeded (reported status 000): Using Singularity image /cvmfs/unpacked.cern.ch/ghcr.io/muoncollidersoft/mucoll-sim-ubuntu24:v2.11-amd64
+...
+001 (38902660.000.000) 2026-06-24 13:03:08 Job executing on host: <10.136.81.223:44801?CCBID=128.105.82.148:9618%3faddrs%3d128.105.82.148-9618+[2607-f388-2200-9d-7ccb-bc08-2489-7689]-9618%26alias%3dospool-ccb.osg.chtc.io%26noUDP%26sock%3dcollector4#4706903%2067.58.49.91:9618%3faddrs%3d67.58.49.91-9618+[fdf0-17b3-c3ec-1f79-10-0-d-2091]-9618%26alias%3dccb-2.ospool.osg-htc.org%26noUDP%26sock%3dcollector10#4700353&PrivNet=comp-cc-0453&addrs=10.136.81.223-44801&alias=comp-cc-0453&noUDP>
+	SlotName: slot1_4@glidein_1267394_485238820@comp-cc-0453
+	CondorScratchDir = "/localscratch/condor/execute/dir_1267378/scratch/glide_7MAlvS/execute/dir_1489812/scratch"
+	Cpus = 1
+	Disk = 4194304
+	GLIDEIN_ResourceName = "PSU-LIGO"
+	GPUs = 0
+	Memory = 4096
+...
+006 (38902660.000.000) 2026-06-24 13:03:19 Image size of job updated: 3485696
+	72  -  MemoryUsage of job (MB)
+	73328  -  ResidentSetSize of job (KB)
+...
+040 (38902660.000.000) 2026-06-24 13:03:19 Started transferring output files
+...
+040 (38902660.000.000) 2026-06-24 13:03:19 Finished transferring output files
+...
+021 (38902660.000.000) 2026-06-24 13:03:19 Error from starter on slot1_4@glidein_1267394_485238820@comp-cc-0453:
+	STARTER at 10.136.81.223 failed to send file(s) to <192.170.231.144:9618>: |Error: 1 total failures: first failure: reading from file /localscratch/condor/execute/dir_1267378/scratch/glide_7MAlvS/execute/dir_1489812/scratch/sim_vacuum_0.slcio: (errno 2) No such file or directory; SHADOW failed to receive file(s) from <128.118.7.6:20466>
+	Code 13 Subcode 2
+...
+004 (38902660.000.000) 2026-06-24 13:03:19 Job was evicted. Code 12 Subcode 2
+	(0) CPU times
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Local Usage
+	0  -  Run Bytes Sent By Job
+	2222503  -  Run Bytes Received By Job
+	Reason: Transfer output files failure at execution point slot1_4@glidein_1267394_485238820@comp-cc-0453 while sending files to access point ap23. Details: 1 total failures: first failure: reading from file /localscratch/condor/execute/dir_1267378/scratch/glide_7MAlvS/execute/dir_1489812/scratch/sim_vacuum_0.slcio: (errno 2) No such file or directory
+	Partitionable Resources :    Usage  Request Allocated 
+	   Cpus                 :        0        1         1 
+	   Disk (KB)            :     2339  4194304   4194304 
+	   GPUs                 :                           0 
+	   Memory (MB)          :       72     4096      4096 
+	   TimeExecute (s)      :       11                    
+	   TimeSlotBusy (s)     :       12                    
+...
+012 (38902660.000.000) 2026-06-24 13:03:19 Job was held.
+	Transfer output files failure at execution point slot1_4@glidein_1267394_485238820@comp-cc-0453 while sending files to access point ap23. Details: 1 total failures: first failure: reading from file /localscratch/condor/execute/dir_1267378/scratch/glide_7MAlvS/execute/dir_1489812/scratch/sim_vacuum_0.slcio: (errno 2) No such file or directory
+	Code 12 Subcode 2
+...
