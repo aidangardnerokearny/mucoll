@@ -1,0 +1,32 @@
+000 (38902633.000.000) 2026-06-23 10:20:25 Job submitted from host: <192.170.231.144:9618?addrs=192.170.231.144-9618+[2605-9a00-10-200b-192-170-231-144]-9618&alias=ap23.uc.osg-htc.org&noUDP&sock=schedd_6365_7066>
+...
+040 (38902633.000.000) 2026-06-23 10:20:59 Started transferring input files
+	Transferring to host: <10.3.1.11:37015?CCBID=128.105.82.148:9618%3faddrs%3d128.105.82.148-9618+[2607-f388-2200-9d-7ccb-bc08-2489-768a]-9618%26alias%3dospool-ccb.osg.chtc.io%26noUDP%26sock%3dcollector4#4645662%2067.58.49.91:9618%3faddrs%3d67.58.49.91-9618+[fdf0-17b3-c3ec-1f79-10-0-e-b69d]-9618%26alias%3dccb-2.ospool.osg-htc.org%26noUDP%26sock%3dcollector8#4642484&PrivNet=n11.cluster&addrs=10.3.1.11-37015&alias=n11.cluster&noUDP>
+...
+040 (38902633.000.000) 2026-06-23 10:21:00 Finished transferring input files
+...
+040 (38902633.000.000) 2026-06-23 10:21:06 Started transferring output files
+...
+040 (38902633.000.000) 2026-06-23 10:21:06 Finished transferring output files
+...
+021 (38902633.000.000) 2026-06-23 10:21:06 Error from starter on slot1_6@glidein_1745641_293776600@n11.cluster:
+	Failed to transfer files: SHADOW at 192.170.231.144 failed to send file(s) to <216.150.6.193:46913>: |Error: 1 total failures: first failure: reading from file /home/aidangardnerokearny/mucoll/jobs/~/mucoll/.setup_shower_profiles.sh ~/mucoll/gen/photonGun_E_25.slcio ~/mucoll/k4geo/MuColl/MAIA/compact/MAIA_v0/: (errno 2) No such file or directory; STARTER failed to receive file(s) from <192.170.231.144:9618>
+	Code 13 Subcode 2
+...
+004 (38902633.000.000) 2026-06-23 10:21:06 Job was evicted. Code 13 Subcode 2
+	(0) CPU times
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Local Usage
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+	Reason: Transfer input files failure at access point ap23 while sending files to execution point slot1_6@glidein_1745641_293776600@n11.cluster. Details: 1 total failures: first failure: reading from file /home/aidangardnerokearny/mucoll/jobs/~/mucoll/.setup_shower_profiles.sh ~/mucoll/gen/photonGun_E_25.slcio ~/mucoll/k4geo/MuColl/MAIA/compact/MAIA_v0/: (errno 2) No such file or directory
+	Partitionable Resources :    Usage  Request Allocated 
+	   Cpus                 :        0        1         1 
+	   Disk (KB)            :       61  4194304   4194304 
+	   GPUs                 :                           0 
+	   Memory (MB)          :              4096      4096 
+...
+012 (38902633.000.000) 2026-06-23 10:21:06 Job was held.
+	Transfer input files failure at access point ap23 while sending files to execution point slot1_6@glidein_1745641_293776600@n11.cluster. Details: 1 total failures: first failure: reading from file /home/aidangardnerokearny/mucoll/jobs/~/mucoll/.setup_shower_profiles.sh ~/mucoll/gen/photonGun_E_25.slcio ~/mucoll/k4geo/MuColl/MAIA/compact/MAIA_v0/: (errno 2) No such file or directory
+	Code 13 Subcode 2
+...
