@@ -15,7 +15,7 @@ for energy in energies
     for i in C_i
         profile = []
         a =  1 + i + b*log(energy/E_c)
-        gamma_a = exp(SpecialFunctions.gamma(a))
+        gamma_a = exp(SpecialFunctions.loggamma(a))
 
         t = 0.0
         while t <= 49.5 
@@ -41,19 +41,16 @@ default(
 
 
 # --- Plot Curves ---
-ts = range(0, 50, length=length(expected_profile))
-colors = []
-
-# --- First Curve ---
+ts = range(0, 50, length=length(expected_profile[1]))
 p = plot(layout=(4,2))
-let i = 1 
-while i <= length(expected_profile)/2
-    i += 1 
-    y1 = expected_profile[i]
-    y2 = expected_profile[i+1]
-    plot!(p[i], ts, y1, label=L"C_{e}", linewidth=2)
-    plot!(p[i], ts, y2, label=L"C_{\gamma}", linewidth=2, linestyle=:dash)
-end
+
+for (subplot_idx, data_idx) in enumerate(1:2:length(expected_profile))
+    y1 = expected_profile[data_idx]      # C_i = -0.5 (electron)
+    y2 = expected_profile[data_idx + 1]  # C_i =  0.5 (photon)
+    energy = energies[subplot_idx]
+    plot!(p[subplot_idx], ts, y1, label = L"C_e",      linewidth = 2)
+    plot!(p[subplot_idx], ts, y2, label = L"C_\gamma", linewidth = 2, linestyle = :dash)
+    title!(p[subplot_idx], "E = $energy GeV")
 end
 
-savefig("electron_photon_curve.pdf")
+savefig("showerProblemPlots/electron_photon_curve.pdf")
