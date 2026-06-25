@@ -1,0 +1,59 @@
+using Plots
+using SpecialFunctions
+using LaTeXStrings
+
+# --- Parameters ---
+energies = [1.0, 5.0, 25.0, 100.0]
+C_i = [-0.5, 0.5]
+b = 0.5
+E_c = 0.08
+
+expected_profile = []
+
+# --- Iterate over all energies and both values of C_i ---
+for energy in energies
+    for i in C_i
+        profile = []
+        a =  1 + i + b*log(energy/E_c)
+        gamma_a = exp(SpecialFunctions.gamma(a))
+
+        t = 0.0
+        while t <= 49.5 
+            t += 0.5
+            push!(profile, energy * b * ((b*t) ^ (a-1)) * exp(-b * t) * 0.5 / gamma_a)
+        end
+        push!(expected_profile, profile)
+    end
+end
+
+println("Data shape: ", size(expected_profile))
+println("Single function size: ", length(expected_profile[1]))
+
+# --- Plot Defaults ---
+default(
+        grid = false,
+        framestyle = :box,
+        legend_background_color = :transparent,
+        legend_foreground_color = :transparent,
+        size = (1000, 1000),
+        legend = :topright,
+)
+
+
+# --- Plot Curves ---
+ts = range(0, 50, length=length(expected_profile))
+colors = []
+
+# --- First Curve ---
+p = plot(layout=(4,2))
+let i = 1 
+while i <= length(expected_profile)/2
+    i += 1 
+    y1 = expected_profile[i]
+    y2 = expected_profile[i+1]
+    plot!(p[i], ts, y1, label=L"C_{e}", linewidth=2)
+    plot!(p[i], ts, y2, label=L"C_{\gamma}", linewidth=2, linestyle=:dash)
+end
+end
+
+savefig("electron_photon_curve.pdf")
