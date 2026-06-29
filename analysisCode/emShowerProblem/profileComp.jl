@@ -123,7 +123,7 @@ function sep_plot(title, xlabel, nom_vals, vac_vals;
       ylims  = logy ? (1e-4, :auto) : (0, :auto),
   )
 
-  bar!(p, centres, nom_w;
+  bar!(p, centers, nom_w;
        bar_width = step(edges),
        fillalpha = 0.4,
        fillcolor = :royalblue,
@@ -153,13 +153,13 @@ default(
 
 )
 
-all_e    = [nom_e, vac_e]
-all_pdg  = [nom_pdg, vac_pdg]
-all_pd   = [nom_pd, vac_pd]
-all_ps   = [nom_ps, vac_ps]
-all_sso  = [nom_sso, vac_sso]
-all_prms = [nom_prms, vac_prms]
-all_rrms = [nom_rrms, vac_rrms]
+all_e    = [nom_e; vac_e]
+all_pdg  = [nom_pdg; vac_pdg]
+all_pd   = [nom_pd; vac_pd]
+all_ps   = [nom_ps; vac_ps]
+all_sso  = [nom_sso; vac_sso]
+all_prms = [nom_prms; vac_prms]
+all_rrms = [nom_rrms; vac_rrms]
 
 pages = Plots.Plot[]
 println("Adding Pages")
@@ -219,7 +219,7 @@ push!(pages, sep_plot(
 ))
 
 println("Saving $(length(pages)) pages to $output_file...")
-mkdir(dirname(abspath(output_file)))
+mkpath(dirname(abspath(output_file)))
 
 gr()
 Plots.GR.beginprint(output_file)
