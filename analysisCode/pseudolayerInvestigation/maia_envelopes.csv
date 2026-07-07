@@ -1,0 +1,7 @@
+subdetector,region,innerR_mm,outerR_mm,innerZ_mm,outerZ_mm,innerSymmetry
+ECAL_BARREL,barrel,1857,2124.5,0,2307,12
+HCAL_BARREL,barrel,2126,4113.5,0,2574.5,12
+MUON_BARREL,barrel,4150,5894,0,4600.3,12
+ECAL_ENDCAP,endcap,310,2124.5,2307.3,2574.8,12
+HCAL_ENDCAP,endcap,310,4113.5,2575.8,4563.3,12
+MUON_ENDCAP,endcap,450,5895,4600.3,6060.3,12
