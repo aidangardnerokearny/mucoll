@@ -111,8 +111,8 @@ def make_graph(x_vals, y_vals, color, line_style=1, line_width=2,
     g.SetLineWidth(line_width)
     g.SetMarkerStyle(marker_style)
     g.SetMarkerSize(5)
-    if g.Integral() > 0:
-        g.Scale(1/g.Integral())
+    #if g.Integral() > 0:
+    #    g.Scale(1/g.Integral())
     return g
 
 # ── Open PDF output ───────────────────────────────────────────────────────────
@@ -154,7 +154,7 @@ for idx, cl in enumerate(clusters):
 
     frame_s = c_single.DrawFrame(0, 0, x_max_s, y_max_s)
     frame_s.GetXaxis().SetTitle("Depth (X_{0})")
-    frame_s.GetYaxis().SetTitle("Fractional energy deposit [% / 100  / bin]")
+    frame_s.GetYaxis().SetTitle("Energy deposit [GeV  / bin]")
     frame_s.SetTitle(
         f"Cluster {idx}  E={cl['energy']:.3f} GeV  "
         f"profileStart={cl['profileStart']:.2f} X_{{0}}  "
@@ -255,9 +255,10 @@ sum_exp  = [0.0] * max_bins
 counts   = [0]   * max_bins
 
 for cl in clusters:
+    total = sum(cl["measured"]) or 1.0
     for i in range(cl["nBins"]):
-        sum_meas[i] += cl["measured"][i]
-        sum_exp[i]  += cl["expected"][i]
+        sum_meas[i] += cl["measured"][i]/total
+        sum_exp[i]  += cl["expected"][i]/total
         counts[i]   += 1
 
 t_avg    = [i * BIN_WIDTH for i in range(max_bins) if counts[i] > 0]

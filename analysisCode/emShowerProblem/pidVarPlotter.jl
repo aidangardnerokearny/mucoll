@@ -81,23 +81,28 @@ ph_prms = Float64[]; oth_prms = Float64[]
 ph_rrms = Float64[]; oth_rrms = Float64[]
 
 n_no_pdg = 0
-
 n_dropped_ps = 0
+n_dropped_pb = 0
+
 for row in tree
     E = Float64(row.clusterEnergy)
     # inside loop, before the continue:
     if row.profileStart <= 0
-        n_dropped_ps += 1
-        continue
+        global n_dropped_ps += 1
     end
+
+    if row.nProfileBins == 0
+        global n_dropped_pb += 1
+    end
+
     (E < energy_min || E > energy_max) && continue
     #row.profileStart <= 0               && continue
-    #row.nProfileBins == 0               && continue
+    row.nProfileBins == 0               && continue
     
     # pdgCode is 0 if branch was missing (UnROOT returns default)
     pdg = Int(row.pdgCode)
     if pdg == 0
-        n_no_pdg += 1
+        global n_no_pdg += 1
     end
 
     is_photon = pdg == 22
@@ -114,7 +119,6 @@ for row in tree
         has_peakrms  && push!(ph_prms, prms)
         has_rrms && push!(ph_rrms, rrms)
     else
-        println(pdg)
         push!(oth_ps,  ps);  push!(oth_pd,  pd)
         push!(oth_e,   E);   push!(oth_sso, sso)
         has_peakrms  && push!(oth_prms, prms)
@@ -122,7 +126,8 @@ for row in tree
     end
 end
 
-println(n_dropped_ps)
+println("Number of dropped profile start: $n_dropped_ps")
+println("Number of dropped profile bins: $n_dropped_pb")
 
 n_no_pdg > 0 && println("WARNING: $n_no_pdg entries had pdgCode=0 — assigned to 'other'")
 n_ph  = length(ph_ps)

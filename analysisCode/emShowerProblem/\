@@ -5,6 +5,7 @@ using Statistics
 using SpecialFunctions
 using LaTeXStrings
 using Printf
+using CairoMakie
 
 # --- Arguments ---
 file_nom = length(ARGS) >= 1 ? ARGS[1] : "shower_profiles.root"
@@ -165,6 +166,15 @@ function sep_plot(title, xlabel, nom_vals, vac_vals;
   return p
 end
 
+cololrs = [
+  "#101c4d", #purple
+  "#e38153", #orange
+  "#d14382", #pink
+  "#0052c5", #blue
+  "#e3ab0f", #gold
+  "#ffe436", #yellow
+]
+
 
 default(
     grid  = false,
@@ -182,70 +192,12 @@ all_sso  = [nom_sso; vac_sso]
 all_prms = [nom_prms; vac_prms]
 all_rrms = [nom_rrms; vac_rrms]
 
-pages = Plots.Plot[]
-println("Adding Pages")
-push!(pages, sep_plot(
-      "Energy: Nominal vs Vacuum Solenoid",
-      "Energy [GeV]",
-      nom_e, vac_e;
-      nbins=50, x_lo=0.0, x_hi=min(maximum(all_e) * 1.05, 30),
-))
-
-
-push!(pages, sep_plot(
-      "PDG ID: Nominal vs Vacuum Solenoid",
-      "ID",
-      nom_pdg, vac_pdg;
-      nbins=50, x_lo=0.0, x_hi=min(maximum(all_pdg) * 1.05, 30),
-))
-
-
-push!(pages, sep_plot(
-      "Profile Discrepancy: Nominal vs Vacuum Solenoid",
-      L"\chi",
-      nom_pd, vac_pd;
-      nbins=50, x_lo=0.0, x_hi=min(maximum(all_pd) * 1.05, 30),
-))
-
-
-push!(pages, sep_plot(
-      "Profile Start: Nominal vs Vacuum Solenoid",
-      L"X_0",
-      nom_ps, vac_ps;
-      nbins=50, x_lo=0.0, x_hi=min(maximum(all_ps) * 1.05, 30),
-))
-
-
-push!(pages, sep_plot(
-      "Shower Start Offset (showerStartLayer - innerLayer): Nominal vs Vacuum Solenoid",
-      "Pseudo Layer",
-      nom_sso, vac_sso;
-      nbins=50, x_lo=0.0, x_hi=min(maximum(all_sso) * 1.05, 30),
-))
-
-
-push!(pages, sep_plot(
-      "Peak RMS: Nominal vs Vacuum Solenoid",
-      "Peak RMS",
-      nom_prms, vac_prms;
-      nbins=50, x_lo=0.0, x_hi=min(maximum(all_prms) * 1.05, 30),
-))
-
-
-push!(pages, sep_plot(
-      "RMS Ratio: Nominal vs Vacuum Solenoid",
-      "RMS Ratio",
-      nom_rrms, vac_rrms;
-      nbins=50, x_lo=0.0, x_hi=min(maximum(all_rrms) * 1.05, 30),
-))
+pages = []
+for (name, ys) in zip(["energy", "discrepancy", "peak_rms"])
+    fig = Figure(backgroundcolor = :transparent)
+    ax = Axis(fig[1,1], backgroundcolor = :transparent, xlabel="", ylabel="")
+    lines!(ax, x, ys, color=mycolors[1])
+end
 
 println("Saving $(length(pages)) pages to $output_file...")
-mkpath(dirname(abspath(output_file)))
-
-gr()
-Plots.GR.beginprint(output_file)
-for p in pages
-    display(p)
-end
-Plots.GR.endprint()
 println("Saved $output_file")
