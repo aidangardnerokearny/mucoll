@@ -1,5 +1,4 @@
 using UnROOT 
-using Plots
 using StatsBase
 using Statistics
 using SpecialFunctions
@@ -55,8 +54,8 @@ for (i, tree) in enumerate(trees)
         sso    = Float64(row.showerStartOffset)
         prms   = Float64(row.peakRms)
         rrms   = Float64(row.rmsRatio)
-        m_prof = Float64(row.measuredProfile)
-        e_prof = Float64(row.expectedProfile)
+        #m_prof = Float64(row.measuredProfile)
+        #e_prof = Float64(row.expectedProfile)
 
         if i==1
             push!(nom_ps, ps)
@@ -66,8 +65,8 @@ for (i, tree) in enumerate(trees)
             push!(nom_prms, prms)
             push!(nom_rrms, rrms)
             push!(nom_pdg, pdg)
-            push!(nom_m_prof, m_prof)
-            push!(nom_e_prof, e_prof)
+            #push!(nom_m_prof, m_prof)
+            #push!(nom_e_prof, e_prof)
         elseif i==2
             push!(vac_ps, ps)
             push!(vac_pd, pd)
@@ -76,8 +75,8 @@ for (i, tree) in enumerate(trees)
             push!(vac_prms, prms)
             push!(vac_rrms, rrms)
             push!(vac_pdg, pdg)
-            push!(vac_m_prof, m_prof)
-            push!(vac_e_prof, e_prof)
+            #push!(vac_m_prof, m_prof)
+            #push!(vac_e_prof, e_prof)
         else
             println("i=$(i), something has gone wrong")
         end
@@ -99,18 +98,27 @@ frac_in_range_vac = (length(vac_e)/length(tree_vac))
 println("Fraction in range $(energy_min) GeV to $(energy_max) in nominal case: $(frac_in_range_nom)")
 println("Fraction in range $(energy_min) GeV to $(energy_max) in vacuum case: $(frac_in_range_vac)")
 
+#=
 println("Iterating over curves")
 for (i, curve) in enumerate(nom_m_prof)
 end 
+=#
 
 # --- Plot Things ---
-COLORS = Dict(
+const COLORS = Dict(
   :purple => "#101c4d", #purple
   :nominal => "#e38153", #orange
   :vacuum => "#d14382", #pink
   :blue => "#0052c5", #blue
   :gold => "#e3ab0f", #gold
   :yellow => "#ffe436", #yellow
+  :text => "#eeeeee", #white
+  :axis => "#eeeeee", #white
+)
+
+ALPHAS = Dict(
+  :nominal => 0.6,
+  :vacuum => 0.6,
 )
 
 function sep_plot(title, xlabel, nom_vals, vac_vals;
@@ -190,4 +198,79 @@ function sep_plot(title, xlabel, nom_vals, vac_vals;
  
     return fig
 end
+
+
+# --- Build all panels ---
+all_e    = [nom_e;    vac_e]
+all_pdg  = [nom_pdg;  vac_pdg]
+all_pd   = [nom_pd;   vac_pd]
+all_ps   = [nom_ps;   vac_ps]
+all_sso  = [nom_sso;  vac_sso]
+all_prms = [nom_prms; vac_prms]
+all_rrms = [nom_rrms; vac_rrms]
+
+# (filename_stem, Figure) — filename_stem becomes <output_dir>/<stem>.svg
+pages = Tuple{String, Figure}[]
+println("Adding Pages")
+
+push!(pages, ("energy", sep_plot(
+    "Energy: Nominal vs Vacuum Solenoid",
+    "Energy [GeV]",
+    nom_e, vac_e;
+    nbins=50, x_lo=0.0, x_hi=min(maximum(all_e) * 1.05, 30),
+)))
+
+push!(pages, ("pdg", sep_plot(
+    "PDG ID: Nominal vs Vacuum Solenoid",
+    "ID",
+    nom_pdg, vac_pdg;
+    nbins=50, x_lo=0.0, x_hi=min(maximum(all_pdg) * 1.05, 30),
+)))
+
+push!(pages, ("profileDiscrepancy", sep_plot(
+    "Profile Discrepancy: Nominal vs Vacuum Solenoid",
+    L"\chi",
+    nom_pd, vac_pd;
+    nbins=50, x_lo=0.0, x_hi=min(maximum(all_pd) * 1.05, 30),
+)))
+
+push!(pages, ("profileStart", sep_plot(
+    "Profile Start: Nominal vs Vacuum Solenoid",
+    L"X_0",
+    nom_ps, vac_ps;
+    nbins=50, x_lo=0.0, x_hi=min(maximum(all_ps) * 1.05, 30),
+)))
+
+push!(pages, ("showerStartOffset", sep_plot(
+    "Shower Start Offset (showerStartLayer - innerLayer): Nominal vs Vacuum Solenoid",
+    "Pseudo Layer",
+    nom_sso, vac_sso;
+    nbins=50, x_lo=0.0, x_hi=min(maximum(all_sso) * 1.05, 30),
+)))
+
+push!(pages, ("peakRms", sep_plot(
+    "Peak RMS: Nominal vs Vacuum Solenoid",
+    "Peak RMS",
+    nom_prms, vac_prms;
+    nbins=50, x_lo=0.0, x_hi=min(maximum(all_prms) * 1.05, 30),
+)))
+
+push!(pages, ("rmsRatio", sep_plot(
+    "RMS Ratio: Nominal vs Vacuum Solenoid",
+    "RMS Ratio",
+    nom_rrms, vac_rrms;
+    nbins=50, x_lo=0.0, x_hi=min(maximum(all_rrms) * 1.05, 30),
+)))
+
+# --- Save ---
+# SVG has no multi-page concept, so we write one file per variable.
+mkpath(output_dir)
+println("Saving $(length(pages)) SVG(s) to $output_dir/ ...")
+for (stem, fig) in pages
+    path = joinpath(output_dir, stem * ".svg")
+    save(path, fig, backgroundcolor = :transparent)
+    println("  wrote $path")
+end
+println("Done.")
+
 
