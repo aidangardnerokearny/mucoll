@@ -5,7 +5,7 @@ customSVGs/pandora_all_vars_ebin02.svg
 </title>
 <desc>
 Creator: ROOT Version 6.40.00
-CreationDate: Tue Jul 14 13:33:47 2026</desc>
+CreationDate: Tue Jul 14 13:34:41 2026</desc>
 <defs>
 </defs>
 <rect x="32.6638" y="19.9281" width="144.813" height="110.198" fill="none" stroke="black"/>
@@ -99,18 +99,18 @@ CreationDate: Tue Jul 14 13:33:47 2026</desc>
  2.89625v 0.174734h 2.89625v 0.0825135h 2.89625v 0.465958h 2.89625v 0.0970747h 2.89625v -0.0630985h 2.89625v 0.131051h 2.89625v 0.237833h 2.89625v 0.111636h 5.7925v -0.0145612h 2.89625" fill="none" stroke="#d14382" stroke-width="2"/>
 <text xml:space="preserve" x="71.0652" y="12.2755" fill="#eeeeee" font-size="10.3291" font-family="Helvetica" font-weight="bold">Peak RMS
 </text>
-<text xml:space="preserve" x="60.8283" y="32.9869" fill="#eeeeee" font-size="4.71246" font-family="Helvetica">)
+<text xml:space="preserve" x="70.9102" y="32.9869" fill="#eeeeee" font-size="4.71246" font-family="Helvetica">)
 </text>
-<text xml:space="preserve" x="58.5714" y="32.9869" fill="#eeeeee" font-size="4.71246" font-family="Times">&#0947;
+<text xml:space="preserve" x="68.6533" y="32.9869" fill="#eeeeee" font-size="4.71246" font-family="Times">&#0947;
 </text>
-<text xml:space="preserve" x="44.5787" y="32.9869" fill="#eeeeee" font-size="4.71246" font-family="Helvetica">Signal (
+<text xml:space="preserve" x="54.6606" y="32.9869" fill="#eeeeee" font-size="4.71246" font-family="Helvetica">Signal (
 </text>
-<path d="M32.8929,36.2282h 9.62362v -9.64233h -9.62362z" fill="#0052c5" fill-opacity="0.25" stroke-opacity="0.25"/>
-<path d="M32.8929,26.5859h 9.62362M32.8929,36.2282h 9.62362M42.5165,36.2282v -9.64233M32.8929,36.2282v -9.64233" fill="none" stroke="#0052c5" stroke-width="2"/>
-<text xml:space="preserve" x="44.5787" y="46.7616" fill="#eeeeee" font-size="4.71246" font-family="Helvetica">Background
+<path d="M42.1957,36.2282h 10.2652v -9.64233h -10.2652z" fill="#0052c5" fill-opacity="0.25" stroke-opacity="0.25"/>
+<path d="M42.1957,26.5859h 10.2652M42.1957,36.2282h 10.2652M52.4609,36.2282v -9.64233M42.1957,36.2282v -9.64233" fill="none" stroke="#0052c5" stroke-width="2"/>
+<text xml:space="preserve" x="54.6606" y="46.7616" fill="#eeeeee" font-size="4.71246" font-family="Helvetica">Background
 </text>
-<path d="M32.8929,50.003h 9.62362v -9.64233h -9.62362z" fill="#d14382" fill-opacity="0.25" stroke-opacity="0.25"/>
-<path d="M32.8929,40.3606h 9.62362M32.8929,50.003h 9.62362M42.5165,50.003v -9.64233M32.8929,50.003v -9.64233" fill="none" stroke="#d14382" stroke-width="2"/>
+<path d="M42.1957,50.003h 10.2652v -9.64233h -10.2652z" fill="#d14382" fill-opacity="0.25" stroke-opacity="0.25"/>
+<path d="M42.1957,40.3606h 10.2652M42.1957,50.003h 10.2652M52.4609,50.003v -9.64233M42.1957,50.003v -9.64233" fill="none" stroke="#d14382" stroke-width="2"/>
 <rect x="221.64" y="19.9281" width="144.813" height="110.198" fill="none" stroke="black"/>
 <path d="M221.64,130.126h 13.1648v -72.524h 13.1648v -19.3077h 13.1648v 30.6159h 13.1648v 26.3991h 13.1648v 14.8979h 13.1648v 8.94217h 13.1648v 5.80922h 13.1648v 2.382h 13.1648v 1.19966h 13.1648v 0.660411h 13.1648v 0.925374z" fill="#0052c5"
  fill-opacity="0.25" stroke-opacity="0.25"/>
