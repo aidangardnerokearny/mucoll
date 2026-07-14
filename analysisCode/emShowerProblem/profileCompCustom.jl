@@ -5,6 +5,14 @@ using SpecialFunctions
 using LaTeXStrings
 using Printf
 using CairoMakie
+using Makie: rich, superscript, subscript
+
+set_theme!(fonts = (
+    regular     = "/home/aidangardnerokearny/.local/share/fonts/OpenSans/OpenSans-Regular.ttf",       # or any installed font name / path to .ttf
+    bold        = "/home/aidangardnerokearny/.local/share/fonts/OpenSans/OpenSans-Bold.ttf",
+    italic      = "/home/aidangardnerokearny/.local/share/fonts/OpenSans/OpenSans-Italic.ttf",
+    bold_italic = "/home/aidangardnerokearny/.local/share/fonts/OpenSans/OpenSans-BoldItalic.ttf",
+))
 
 # --- Arguments ---
 file_nom = length(ARGS) >= 1 ? ARGS[1] : "shower_profiles.root"
@@ -117,12 +125,12 @@ const COLORS = Dict(
 )
 
 ALPHAS = Dict(
-  :nominal => 0.6,
-  :vacuum => 0.6,
+  :nominal => 0.9,
+  :vacuum => 0.9,
 )
 
 function sep_plot(title, xlabel, nom_vals, vac_vals;
-                  nbins=50, x_lo=nothing, x_hi=nothing, logy=false)
+                  nbins=50, annotation=nothing,  x_lo=nothing, x_hi=nothing, logy=false)
     all_vals = [nom_vals; vac_vals]
     xlo = isnothing(x_lo) ? minimum(all_vals) : x_lo
     xhi = isnothing(x_hi) ? maximum(all_vals) : x_hi
@@ -141,23 +149,29 @@ function sep_plot(title, xlabel, nom_vals, vac_vals;
     fig = Figure(backgroundcolor = :transparent, size = (800, 600))
  
     ax_kwargs = (
-        backgroundcolor  = :transparent,
-        title            = title,
-        xlabel           = xlabel,
-        ylabel           = "Normalised entries / bin",
-        titlecolor       = COLORS[:text],
-        xlabelcolor      = COLORS[:text],
-        ylabelcolor      = COLORS[:text],
-        xticklabelcolor  = COLORS[:text],
-        yticklabelcolor  = COLORS[:text],
-        xgridvisible     = false,
-        ygridvisible     = false,
-        bottomspinecolor = COLORS[:axis],
-        leftspinecolor   = COLORS[:axis],
-        topspinecolor    = COLORS[:axis],
-        rightspinecolor  = COLORS[:axis],
-        xtickcolor       = COLORS[:axis],
-        ytickcolor       = COLORS[:axis],
+        backgroundcolor    = :transparent,
+        title              = "",
+        xlabel             = xlabel,
+        ylabel             = "Normalised entries / bin",
+        titlecolor         = COLORS[:text],
+        xlabelcolor        = COLORS[:text],
+        ylabelcolor        = COLORS[:text],
+        xticklabelcolor    = COLORS[:text],
+        yticklabelcolor    = COLORS[:text],
+        xgridvisible       = false,
+        ygridvisible       = false,
+        bottomspinecolor   = COLORS[:axis],
+        leftspinecolor     = COLORS[:axis],
+        topspinecolor      = COLORS[:axis],
+        rightspinecolor    = COLORS[:axis],
+        xtickcolor         = COLORS[:axis],
+        ytickcolor         = COLORS[:axis],
+        xminorticksvisible = true,
+        yminorticksvisible = true,
+        xminortickcolor   = COLORS[:axis],
+        yminortickcolor   = COLORS[:axis],
+        xminorticks        = IntervalsBetween(5),
+        yminorticks        = IntervalsBetween(5),
     )
  
     ax = logy ?
@@ -195,7 +209,22 @@ function sep_plot(title, xlabel, nom_vals, vac_vals;
         backgroundcolor  = :transparent,
         labelcolor       = COLORS[:text],
     )
- 
+
+
+    if !isnothing(annotation)
+        labels = annotation isa AbstractVector ? annotation : [annotation]
+        line_dy = 0.07   # vertical spacing between lines, in axis-relative units
+        y0 = 0.95        # top line position
+        for (k, lab) in enumerate(labels)
+            text!(ax, 0.07, y0 - (k-1)*line_dy;
+                  text     = lab,
+                  space    = :relative,
+                  align    = (:left, :top),
+                  color    = COLORS[:text],
+                  fontsize = 25-10(k-1),
+            )
+        end
+    end 
     return fig
 end
 
@@ -209,6 +238,14 @@ all_sso  = [nom_sso;  vac_sso]
 all_prms = [nom_prms; vac_prms]
 all_rrms = [nom_rrms; vac_rrms]
 
+const photon25GeVLab = [
+    rich("Muon Collider", font = :bold_italic),
+    rich("Photon Gun ",
+         rich("E", font = :italic),
+         subscript("γ"),
+         " = 25 GeV"),
+]
+
 # (filename_stem, Figure) — filename_stem becomes <output_dir>/<stem>.svg
 pages = Tuple{String, Figure}[]
 println("Adding Pages")
@@ -217,55 +254,61 @@ push!(pages, ("energy", sep_plot(
     "Energy: Nominal vs Vacuum Solenoid",
     "Energy [GeV]",
     nom_e, vac_e;
-    nbins=50, x_lo=0.0, x_hi=min(maximum(all_e) * 1.05, 30),
+    nbins=50, x_lo=0.0, x_hi=min(maximum(all_e) * 1.05, 30), 
+    annotation = photon25GeVLab
 )))
 
 push!(pages, ("pdg", sep_plot(
     "PDG ID: Nominal vs Vacuum Solenoid",
     "ID",
     nom_pdg, vac_pdg;
-    nbins=50, x_lo=0.0, x_hi=min(maximum(all_pdg) * 1.05, 30),
+    nbins=50, x_lo=0.0, x_hi=min(maximum(all_pdg) * 1.05, 30), 
+    annotation = photon25GeVLab
 )))
 
 push!(pages, ("profileDiscrepancy", sep_plot(
     "Profile Discrepancy: Nominal vs Vacuum Solenoid",
     L"\chi",
     nom_pd, vac_pd;
-    nbins=50, x_lo=0.0, x_hi=min(maximum(all_pd) * 1.05, 30),
+    nbins=50, x_lo=0.0, x_hi=min(maximum(all_pd) * 1.05, 30), 
+    annotation = photon25GeVLab
 )))
 
 push!(pages, ("profileStart", sep_plot(
     "Profile Start: Nominal vs Vacuum Solenoid",
     L"X_0",
     nom_ps, vac_ps;
-    nbins=50, x_lo=0.0, x_hi=min(maximum(all_ps) * 1.05, 30),
+    nbins=50, x_lo=0.0, x_hi=min(maximum(all_ps) * 1.05, 30), 
+    annotation = photon25GeVLab
 )))
 
 push!(pages, ("showerStartOffset", sep_plot(
     "Shower Start Offset (showerStartLayer - innerLayer): Nominal vs Vacuum Solenoid",
     "Pseudo Layer",
     nom_sso, vac_sso;
-    nbins=50, x_lo=0.0, x_hi=min(maximum(all_sso) * 1.05, 30),
+    nbins=50, x_lo=0.0, x_hi=min(maximum(all_sso) * 1.05, 30), 
+    annotation = photon25GeVLab
 )))
 
 push!(pages, ("peakRms", sep_plot(
     "Peak RMS: Nominal vs Vacuum Solenoid",
     "Peak RMS",
     nom_prms, vac_prms;
-    nbins=50, x_lo=0.0, x_hi=min(maximum(all_prms) * 1.05, 30),
+    nbins=50, x_lo=0.0, x_hi=min(maximum(all_prms) * 1.05, 30), 
+    annotation = photon25GeVLab
 )))
 
 push!(pages, ("rmsRatio", sep_plot(
     "RMS Ratio: Nominal vs Vacuum Solenoid",
     "RMS Ratio",
     nom_rrms, vac_rrms;
-    nbins=50, x_lo=0.0, x_hi=min(maximum(all_rrms) * 1.05, 30),
+    nbins=50, x_lo=0.0, x_hi=min(maximum(all_rrms) * 1.05, 30), 
+    annotation = photon25GeVLab
 )))
 
 # --- Save ---
-# SVG has no multi-page concept, so we write one file per variable.
 mkpath(output_dir)
-println("Saving $(length(pages)) SVG(s) to $output_dir/ ...")
+println("Saving $(length(pages)) SVG(s) to $output_dir ...")
 for (stem, fig) in pages
     path = joinpath(output_dir, stem * ".svg")
     save(path, fig, backgroundcolor = :transparent)
