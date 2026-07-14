@@ -5,7 +5,7 @@ customSVGs/average_profile.svg
 </title>
 <desc>
 Creator: ROOT Version 6.40.00
-CreationDate: Tue Jul 14 15:53:22 2026</desc>
+CreationDate: Tue Jul 14 15:54:29 2026</desc>
 <defs>
 </defs>
 <rect x="74.2008" y="35.4046" width="464.882" height="272.616" fill="none" stroke="black"/>
@@ -81,8 +81,4 @@ CreationDate: Tue Jul 14 15:53:22 2026</desc>
 <path d="M319.752,56.6474h 34.7244" fill="none" stroke="#0052c5" stroke-width="3"/>
 <text xml:space="preserve" x="361.917" y="88.1017" fill="#eeeeee" font-size="10.2444" font-family="Helvetica">Mean expected
 </text>
-<path d="M319.752,84.9711h 34.7244" fill="none" stroke="#d14382" stroke-width="3" stroke-dasharray=" 3, 3"/>
-<text xml:space="preserve" x="230.14" y="19.1595" fill="#eeeeee" font-size="11.8685" font-family="Helvetica" font-weight="bold"> (N = 629 clusters)
-</text>
-<text xml:space="preserve" x="79.8701" y="19.1595" fill="#eeeeee" font-size="11.8685" font-family="Helvetica" font-weight="bold">Average longitudinal profile
-</text></svg>
+<path d="M319.752,84.9711h 34.7244" fill="none" stroke="#d14382" stroke-width="3" stroke-dasharray=" 3, 3"/></svg>
