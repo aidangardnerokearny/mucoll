@@ -5,7 +5,7 @@ customSVGs/pandora_all_vars_ebin06.svg
 </title>
 <desc>
 Creator: ROOT Version 6.40.00
-CreationDate: Tue Jul 14 12:58:25 2026</desc>
+CreationDate: Tue Jul 14 13:31:28 2026</desc>
 <defs>
 </defs>
 <rect x="32.6638" y="19.9281" width="144.813" height="110.198" fill="none" stroke="black"/>
@@ -98,18 +98,18 @@ CreationDate: Tue Jul 14 12:58:25 2026</desc>
  0.147126h 2.89625v 0.171647h 2.89625v 0.441378h 2.89625v 0.098084h 2.89625v 0.662067h 2.89625v -0.122605h 2.89625" fill="none" stroke="#d14382" stroke-width="2"/>
 <text xml:space="preserve" x="71.0652" y="12.2755" fill="#eeeeee" font-size="10.3291" font-family="Helvetica" font-weight="bold">Peak RMS
 </text>
-<text xml:space="preserve" x="140.763" y="26.8537" fill="#eeeeee" font-size="8.92492" font-family="Helvetica">)
+<text xml:space="preserve" x="51.6629" y="25.3342" fill="#eeeeee" font-size="4.71246" font-family="Helvetica">)
 </text>
-<text xml:space="preserve" x="136.25" y="26.8537" fill="#eeeeee" font-size="8.92492" font-family="Times">&#0947;
+<text xml:space="preserve" x="49.4061" y="25.3342" fill="#eeeeee" font-size="4.71246" font-family="Times">&#0947;
 </text>
-<text xml:space="preserve" x="107.361" y="26.8537" fill="#eeeeee" font-size="8.92492" font-family="Helvetica">Signal (
+<text xml:space="preserve" x="35.4134" y="25.3342" fill="#eeeeee" font-size="4.71246" font-family="Helvetica">Signal (
 </text>
-<path d="M89.0536,28.5756h 15.077v -9.64233h -15.077z" fill="#0052c5" fill-opacity="0.25" stroke-opacity="0.25"/>
-<path d="M89.0536,18.9333h 15.077M89.0536,28.5756h 15.077M104.131,28.5756v -9.64233M89.0536,28.5756v -9.64233" fill="none" stroke="#0052c5" stroke-width="2"/>
-<text xml:space="preserve" x="107.361" y="40.6285" fill="#eeeeee" font-size="8.92492" font-family="Helvetica">Background
+<path d="M23.7276,28.5756h 9.62362v -9.64233h -9.62362z" fill="#0052c5" fill-opacity="0.25" stroke-opacity="0.25"/>
+<path d="M23.7276,18.9333h 9.62362M23.7276,28.5756h 9.62362M33.3512,28.5756v -9.64233M23.7276,28.5756v -9.64233" fill="none" stroke="#0052c5" stroke-width="2"/>
+<text xml:space="preserve" x="35.4134" y="39.109" fill="#eeeeee" font-size="4.71246" font-family="Helvetica">Background
 </text>
-<path d="M89.0536,42.3503h 15.077v -9.64233h -15.077z" fill="#d14382" fill-opacity="0.25" stroke-opacity="0.25"/>
-<path d="M89.0536,32.708h 15.077M89.0536,42.3503h 15.077M104.131,42.3503v -9.64233M89.0536,42.3503v -9.64233" fill="none" stroke="#d14382" stroke-width="2"/>
+<path d="M23.7276,42.3503h 9.62362v -9.64233h -9.62362z" fill="#d14382" fill-opacity="0.25" stroke-opacity="0.25"/>
+<path d="M23.7276,32.708h 9.62362M23.7276,42.3503h 9.62362M33.3512,42.3503v -9.64233M23.7276,42.3503v -9.64233" fill="none" stroke="#d14382" stroke-width="2"/>
 <rect x="221.64" y="19.9281" width="144.813" height="110.198" fill="none" stroke="black"/>
 <path d="M221.64,130.126h 13.1648v -64.3348h 13.1648v -27.4969h 13.1648v 33.4391h 13.1648v 28.271h 13.1648v 14.6951h 13.1648v 7.89497h 13.1648v 4.29806h 13.1648v 1.75106h 13.1648v 0.738824h 13.1648v 0.3524h 13.1648v 0.391285z" fill="#0052c5"
  fill-opacity="0.25" stroke-opacity="0.25"/>
@@ -177,18 +177,6 @@ CreationDate: Tue Jul 14 12:58:25 2026</desc>
  stroke-width="2"/>
 <text xml:space="preserve" x="241.084" y="12.2755" fill="#eeeeee" font-size="10.3291" font-family="Helvetica" font-weight="bold">Long. Profile Start
 </text>
-<text xml:space="preserve" x="329.74" y="26.8537" fill="#eeeeee" font-size="8.92492" font-family="Helvetica">)
-</text>
-<text xml:space="preserve" x="325.226" y="26.8537" fill="#eeeeee" font-size="8.92492" font-family="Times">&#0947;
-</text>
-<text xml:space="preserve" x="296.338" y="26.8537" fill="#eeeeee" font-size="8.92492" font-family="Helvetica">Signal (
-</text>
-<path d="M278.03,28.5756h 15.077v -9.64233h -15.077z" fill="#0052c5" fill-opacity="0.25" stroke-opacity="0.25"/>
-<path d="M278.03,18.9333h 15.077M278.03,28.5756h 15.077M293.107,28.5756v -9.64233M278.03,28.5756v -9.64233" fill="none" stroke="#0052c5" stroke-width="2"/>
-<text xml:space="preserve" x="296.338" y="40.6285" fill="#eeeeee" font-size="8.92492" font-family="Helvetica">Background
-</text>
-<path d="M278.03,42.3503h 15.077v -9.64233h -15.077z" fill="#d14382" fill-opacity="0.25" stroke-opacity="0.25"/>
-<path d="M278.03,32.708h 15.077M278.03,42.3503h 15.077M293.107,42.3503v -9.64233M278.03,42.3503v -9.64233" fill="none" stroke="#d14382" stroke-width="2"/>
 <rect x="410.617" y="19.9281" width="144.813" height="110.198" fill="none" stroke="black"/>
 <path d="M410.617,130.126h 20.6875v -0.00926781h 3.44792v -0.108125h 3.44792v -1.34692h 3.44792v -4.99535h 3.44792v -13.738h 3.44792v -21.6218h 3.44792v -25.5452h 3.44792v -18.3163h 3.44792v -6.15074h 3.44792v 6.20944h 3.44792v 12.4467h 3.44792v
  15.7213h 3.44792v 13.5588h 3.44792v 12.0482h 3.44792v 8.4646h 3.44792v 6.91379h 3.44792v 4.6061h 3.44792v 3.14179h 3.44792v 2.40963h 3.44792v 1.4118h 3.44792v 1.18628h 3.44792v 0.704354h 3.44792v 0.725979h 3.44792v 0.475748h 3.44792v 0.460301h
@@ -270,18 +258,6 @@ CreationDate: Tue Jul 14 12:58:25 2026</desc>
  stroke-width="2"/>
 <text xml:space="preserve" x="427.578" y="12.2755" fill="#eeeeee" font-size="10.3291" font-family="Helvetica" font-weight="bold">Long. Profile Discr.
 </text>
-<text xml:space="preserve" x="518.716" y="26.8537" fill="#eeeeee" font-size="8.92492" font-family="Helvetica">)
-</text>
-<text xml:space="preserve" x="514.202" y="26.8537" fill="#eeeeee" font-size="8.92492" font-family="Times">&#0947;
-</text>
-<text xml:space="preserve" x="485.314" y="26.8537" fill="#eeeeee" font-size="8.92492" font-family="Helvetica">Signal (
-</text>
-<path d="M467.006,28.5756h 15.077v -9.64233h -15.077z" fill="#0052c5" fill-opacity="0.25" stroke-opacity="0.25"/>
-<path d="M467.006,18.9333h 15.077M467.006,28.5756h 15.077M482.083,28.5756v -9.64233M467.006,28.5756v -9.64233" fill="none" stroke="#0052c5" stroke-width="2"/>
-<text xml:space="preserve" x="485.314" y="40.6285" fill="#eeeeee" font-size="8.92492" font-family="Helvetica">Background
-</text>
-<path d="M467.006,42.3503h 15.077v -9.64233h -15.077z" fill="#d14382" fill-opacity="0.25" stroke-opacity="0.25"/>
-<path d="M467.006,32.708h 15.077M467.006,42.3503h 15.077M482.083,42.3503v -9.64233M467.006,42.3503v -9.64233" fill="none" stroke="#d14382" stroke-width="2"/>
 <rect x="32.6638" y="176.104" width="144.813" height="110.198" fill="none" stroke="black"/>
 <path d="M32.6638,286.302h 8.35457v -0.12481h 2.78486v -1.07049h 2.78486v -1.30571h 2.78486v -1.2145h 2.78486v -0.897675h 2.78486v -1.01288h 2.78486v -0.499242h 2.78486v -0.408034h 2.78486v -0.283224h 2.78486v 0.0576048h 2.78486v 0.0672056h 2.78486v
  0.0864072h 2.78486v 0.302425h 2.78486v -0.0528044h 2.78486v 0.316827h 2.78486v 0.12481h 2.78486v -0.0144012h 2.78486v 0.192016h 2.78486v 0.273623h 2.78486v -0.0672056h 2.78486v 0.417635h 2.78486v 0.278423h 2.78486v -0.216018h 2.78486v 0.134411h
@@ -351,18 +327,6 @@ CreationDate: Tue Jul 14 12:58:25 2026</desc>
  stroke="#d14382" stroke-width="2"/>
 <text xml:space="preserve" x="44.434" y="168.452" fill="#eeeeee" font-size="10.3291" font-family="Helvetica" font-weight="bold">Peak Energy Fraction
 </text>
-<text xml:space="preserve" x="140.763" y="183.03" fill="#eeeeee" font-size="8.92492" font-family="Helvetica">)
-</text>
-<text xml:space="preserve" x="136.25" y="183.03" fill="#eeeeee" font-size="8.92492" font-family="Times">&#0947;
-</text>
-<text xml:space="preserve" x="107.361" y="183.03" fill="#eeeeee" font-size="8.92492" font-family="Helvetica">Signal (
-</text>
-<path d="M89.0536,184.752h 15.077v -9.64233h -15.077z" fill="#0052c5" fill-opacity="0.25" stroke-opacity="0.25"/>
-<path d="M89.0536,175.11h 15.077M89.0536,184.752h 15.077M104.131,184.752v -9.64233M89.0536,184.752v -9.64233" fill="none" stroke="#0052c5" stroke-width="2"/>
-<text xml:space="preserve" x="107.361" y="196.805" fill="#eeeeee" font-size="8.92492" font-family="Helvetica">Background
-</text>
-<path d="M89.0536,198.527h 15.077v -9.64233h -15.077z" fill="#d14382" fill-opacity="0.25" stroke-opacity="0.25"/>
-<path d="M89.0536,188.884h 15.077M89.0536,198.527h 15.077M104.131,198.527v -9.64233M89.0536,198.527v -9.64233" fill="none" stroke="#d14382" stroke-width="2"/>
 <rect x="221.64" y="176.104" width="144.813" height="110.198" fill="none" stroke="black"/>
 <path d="M221.64,286.302h 4.82709v -91.8317h 4.82709v 13.2511h 4.82709v 16.6022h 4.82709v 15.8189h 4.82709v 13.6752h 4.82709v 11.0609h 4.82709v 6.98645h 4.82709v 5.26686h 4.82709v 3.25624h 4.82709v 2.14533h 4.82709v 1.2689h 4.82709v 0.713446h
  4.82709v 0.638609h 4.82709v 0.287707h 4.82709v 0.237815h 4.82709v 0.144685h 4.82709v 0.177946h 4.82709v 0.0831522h 4.82709v 0.0216196h 4.82709v 0.0681848h 4.82709v 0.0399131h 4.82709v -0.00166305h 4.82709v 0.0349239h 4.82709v 0.00166305h 4.82709v
@@ -440,18 +404,6 @@ CreationDate: Tue Jul 14 12:58:25 2026</desc>
  9.65417v -0.0140681h 9.65417" fill="none" stroke="#d14382" stroke-width="2"/>
 <text xml:space="preserve" x="259.139" y="168.452" fill="#eeeeee" font-size="10.3291" font-family="Helvetica" font-weight="bold">RMS Ratio
 </text>
-<text xml:space="preserve" x="329.74" y="183.03" fill="#eeeeee" font-size="8.92492" font-family="Helvetica">)
-</text>
-<text xml:space="preserve" x="325.226" y="183.03" fill="#eeeeee" font-size="8.92492" font-family="Times">&#0947;
-</text>
-<text xml:space="preserve" x="296.338" y="183.03" fill="#eeeeee" font-size="8.92492" font-family="Helvetica">Signal (
-</text>
-<path d="M278.03,184.752h 15.077v -9.64233h -15.077z" fill="#0052c5" fill-opacity="0.25" stroke-opacity="0.25"/>
-<path d="M278.03,175.11h 15.077M278.03,184.752h 15.077M293.107,184.752v -9.64233M278.03,184.752v -9.64233" fill="none" stroke="#0052c5" stroke-width="2"/>
-<text xml:space="preserve" x="296.338" y="196.805" fill="#eeeeee" font-size="8.92492" font-family="Helvetica">Background
-</text>
-<path d="M278.03,198.527h 15.077v -9.64233h -15.077z" fill="#d14382" fill-opacity="0.25" stroke-opacity="0.25"/>
-<path d="M278.03,188.884h 15.077M278.03,198.527h 15.077M293.107,198.527v -9.64233M278.03,198.527v -9.64233" fill="none" stroke="#d14382" stroke-width="2"/>
 <rect x="410.617" y="176.104" width="144.813" height="110.198" fill="none" stroke="black"/>
 <path d="M410.617,286.302h 18.1016v -7.28481h 3.62032v 3.79953h 3.62032v -5.37076h 3.62032v 1.99975h 3.62032v -0.771333h 3.62032v -1.94262h 3.62032v -1.65694h 3.62032v -1.31412h 3.62032v -2.45684h 3.62032v -0.971308h 3.62032v -2.22829h 3.62032v
  -2.34257h 3.62032v -3.14247h 3.62032v -0.314247h 3.62032v -3.08533h 3.62032v -0.457086h 3.62032v -2.11402h 3.62032v -1.37126h 3.62032v -2.79965h 3.62032v 2.88536h 3.62032v -5.54217h 3.62032v 0.94274h 3.62032v -0.657061h 3.62032v -3.54242h 3.62032v
@@ -537,18 +489,4 @@ CreationDate: Tue Jul 14 12:58:25 2026</desc>
  3.62032v -3.14161h 3.62032v 3.14161h 3.62032v 4.59158h 3.62032v -3.62493h 3.62032v -0.966649h 3.62032v 3.8666h 3.62032v 2.65829h 3.62032v -5.55823h 3.62032v 8.69984h 3.62032v 1.20831h 3.62032v -2.17496h 3.62032v 1.44997h 3.62032v -2.65829h 3.62032v
  -2.17496h 3.62032v 3.38327h 3.62032v 2.17496h 3.62032v 3.38327h 3.62032v 4.59158h 3.62032v -6.04156h 3.62032v -3.38327h 3.62032v 2.65829h 3.62032v 7.00821h 3.62032v -1.9333h 3.62032" fill="none" stroke="#d14382" stroke-width="2"/>
 <text xml:space="preserve" x="427.803" y="168.452" fill="#eeeeee" font-size="10.3291" font-family="Helvetica" font-weight="bold">Min Track Distance
-</text>
-<text xml:space="preserve" x="518.716" y="183.03" fill="#eeeeee" font-size="8.92492" font-family="Helvetica">)
-</text>
-<text xml:space="preserve" x="514.202" y="183.03" fill="#eeeeee" font-size="8.92492" font-family="Times">&#0947;
-</text>
-<text xml:space="preserve" x="485.314" y="183.03" fill="#eeeeee" font-size="8.92492" font-family="Helvetica">Signal (
-</text>
-<path d="M467.006,184.752h 15.077v -9.64233h -15.077z" fill="#0052c5" fill-opacity="0.25" stroke-opacity="0.25"/>
-<path d="M467.006,175.11h 15.077M467.006,184.752h 15.077M482.083,184.752v -9.64233M467.006,184.752v -9.64233" fill="none" stroke="#0052c5" stroke-width="2"/>
-<text xml:space="preserve" x="485.314" y="196.805" fill="#eeeeee" font-size="8.92492" font-family="Helvetica">Background
-</text>
-<path d="M467.006,198.527h 15.077v -9.64233h -15.077z" fill="#d14382" fill-opacity="0.25" stroke-opacity="0.25"/>
-<path d="M467.006,188.884h 15.077M467.006,198.527h 15.077M482.083,198.527v -9.64233M467.006,198.527v -9.64233" fill="none" stroke="#d14382" stroke-width="2"/>
-<text xml:space="preserve" x="216.258" y="4.68529" fill="#eeeeee" font-size="10.5297" font-family="Helvetica" font-weight="bold">Photon ID PDFs -- 5-10 GeV
 </text></svg>
