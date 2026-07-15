@@ -5,7 +5,7 @@ customSVGs/pandora_all_vars_ebin04.svg
 </title>
 <desc>
 Creator: ROOT Version 6.40.00
-CreationDate: Wed Jul 15 13:21:18 2026</desc>
+CreationDate: Wed Jul 15 13:47:50 2026</desc>
 <defs>
 </defs>
 <rect x="32.6638" y="19.9281" width="144.813" height="110.198" fill="none" stroke="black"/>
@@ -100,7 +100,7 @@ CreationDate: Wed Jul 15 13:21:18 2026</desc>
  2.89625v 0.416823h 2.89625v 0.402929h 2.89625v -0.138941h 2.89625v 0.0138941h 2.89625v 0.389035h 5.7925v 0.222306h 2.89625v 0.125047h 2.89625v 0.486294h 2.89625v -0.0972587h 2.89625v 0.111153h 2.89625" fill="none" stroke="#d14382" stroke-width="2"/>
 <text xml:space="preserve" x="71.0652" y="12.2755" fill="#eeeeee" font-size="10.3291" font-family="Helvetica" font-weight="bold">Peak RMS
 </text>
-<text xml:space="preserve" x="140.408" y="27.0515" fill="#eeeeee" font-size="5.41454" font-family="Helvetica" font-weight="bold">Muon Collider
+<text xml:space="preserve" x="122.353" y="27.0515" fill="#eeeeee" font-size="5.41454" font-family="Helvetica" font-weight="bold">#textit{Muon Collider}
 </text>
 <text xml:space="preserve" x="70.9102" y="32.9869" fill="#eeeeee" font-size="4.71246" font-family="Helvetica">)
 </text>
@@ -179,7 +179,7 @@ CreationDate: Wed Jul 15 13:21:18 2026</desc>
  stroke-width="2"/>
 <text xml:space="preserve" x="241.084" y="12.2755" fill="#eeeeee" font-size="10.3291" font-family="Helvetica" font-weight="bold">Long. Profile Start
 </text>
-<text xml:space="preserve" x="329.385" y="27.0515" fill="#eeeeee" font-size="5.41454" font-family="Helvetica" font-weight="bold">Muon Collider
+<text xml:space="preserve" x="311.33" y="27.0515" fill="#eeeeee" font-size="5.41454" font-family="Helvetica" font-weight="bold">#textit{Muon Collider}
 </text>
 <rect x="410.617" y="19.9281" width="144.813" height="110.198" fill="none" stroke="black"/>
 <path d="M410.617,130.126h 24.1354v -0.00907204h 6.89584v -0.136081h 3.44792v -0.58061h 3.44792v -1.47874h 3.44792v -4.15499h 3.44792v -7.80649h 3.44792v -11.077h 3.44792v -15.3862h 3.44792v -17.0237h 3.44792v -16.121h 3.44792v -11.3083h 3.44792v
@@ -254,7 +254,7 @@ CreationDate: Wed Jul 15 13:21:18 2026</desc>
  stroke="#d14382" stroke-width="2"/>
 <text xml:space="preserve" x="427.578" y="12.2755" fill="#eeeeee" font-size="10.3291" font-family="Helvetica" font-weight="bold">Long. Profile Discr.
 </text>
-<text xml:space="preserve" x="518.361" y="27.0515" fill="#eeeeee" font-size="5.41454" font-family="Helvetica" font-weight="bold">Muon Collider
+<text xml:space="preserve" x="500.306" y="27.0515" fill="#eeeeee" font-size="5.41454" font-family="Helvetica" font-weight="bold">#textit{Muon Collider}
 </text>
 <rect x="32.6638" y="176.104" width="144.813" height="110.198" fill="none" stroke="black"/>
 <path d="M32.6638,286.302h 5.56972v -0.445436h 2.78486v -3.47728h 2.78486v -1.35068h 2.78486v 0.560387h 2.78486v 0.0502912h 2.78486v 0.0431067h 2.78486v -0.0574756h 2.78486v 0.122136h 2.78486v 0.287378h 2.78486v 0.0646601h 2.78486v 0.359223h 2.78486v
@@ -332,7 +332,7 @@ CreationDate: Wed Jul 15 13:21:18 2026</desc>
  fill="none" stroke="#d14382" stroke-width="2"/>
 <text xml:space="preserve" x="44.434" y="168.452" fill="#eeeeee" font-size="10.3291" font-family="Helvetica" font-weight="bold">Peak Energy Fraction
 </text>
-<text xml:space="preserve" x="140.408" y="183.228" fill="#eeeeee" font-size="5.41454" font-family="Helvetica" font-weight="bold">Muon Collider
+<text xml:space="preserve" x="122.353" y="183.228" fill="#eeeeee" font-size="5.41454" font-family="Helvetica" font-weight="bold">#textit{Muon Collider}
 </text>
 <rect x="221.64" y="176.104" width="144.813" height="110.198" fill="none" stroke="black"/>
 <path d="M221.64,286.302h 4.82709v -91.8317h 4.82709v 10.1049h 4.82709v 12.7724h 4.82709v 13.1283h 4.82709v 11.4086h 4.82709v 9.91578h 4.82709v 8.85012h 4.82709v 6.14258h 4.82709v 4.83887h 4.82709v 4.10469h 4.82709v 2.91667h 4.82709v 1.98449h
@@ -425,7 +425,7 @@ CreationDate: Wed Jul 15 13:21:18 2026</desc>
  0.259467h 4.82709v 0.0540556h 4.82709v 0.248656h 4.82709v 0.0540556h 4.82709" fill="none" stroke="#d14382" stroke-width="2"/>
 <text xml:space="preserve" x="259.139" y="168.452" fill="#eeeeee" font-size="10.3291" font-family="Helvetica" font-weight="bold">RMS Ratio
 </text>
-<text xml:space="preserve" x="329.385" y="183.228" fill="#eeeeee" font-size="5.41454" font-family="Helvetica" font-weight="bold">Muon Collider
+<text xml:space="preserve" x="311.33" y="183.228" fill="#eeeeee" font-size="5.41454" font-family="Helvetica" font-weight="bold">#textit{Muon Collider}
 </text>
 <rect x="410.617" y="176.104" width="144.813" height="110.198" fill="none" stroke="black"/>
 <path d="M410.617,286.302h 18.1016v -2.12571h 3.62032v 0.935313h 3.62032v -1.27543h 3.62032v 0.318857h 3.62032v -0.0637713h 3.62032v 0.0425142h 3.62032v -0.255085h 3.62032v -0.680228h 3.62032v -1.38171h 3.62032v 0.552685h 3.62032v -0.573942h 3.62032v
@@ -524,5 +524,5 @@ CreationDate: Wed Jul 15 13:21:18 2026</desc>
  3.62032v 1.23957h 3.62032v 4.23521h 3.62032v -1.34287h 7.24063v 1.23957h 3.62032v 6.09457h 3.62032v -2.78904h 3.62032v 1.85936h 3.62032v -1.34287h 3.62032v -0.103298h 3.62032" fill="none" stroke="#d14382" stroke-width="2"/>
 <text xml:space="preserve" x="427.803" y="168.452" fill="#eeeeee" font-size="10.3291" font-family="Helvetica" font-weight="bold">Min Track Distance
 </text>
-<text xml:space="preserve" x="518.361" y="183.228" fill="#eeeeee" font-size="5.41454" font-family="Helvetica" font-weight="bold">Muon Collider
+<text xml:space="preserve" x="500.306" y="183.228" fill="#eeeeee" font-size="5.41454" font-family="Helvetica" font-weight="bold">#textit{Muon Collider}
 </text></svg>
