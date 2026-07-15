@@ -5,7 +5,7 @@ customSVGs/average_profile.svg
 </title>
 <desc>
 Creator: ROOT Version 6.40.00
-CreationDate: Tue Jul 14 15:54:29 2026</desc>
+CreationDate: Wed Jul 15 12:44:56 2026</desc>
 <defs>
 </defs>
 <rect x="74.2008" y="35.4046" width="464.882" height="272.616" fill="none" stroke="black"/>
@@ -76,9 +76,19 @@ CreationDate: Tue Jul 14 15:54:29 2026</desc>
  4.47217, 1.28752l 4.47217, 1.0925l 4.47217, 0.924814l 4.47217, 0.781109l 4.47217, 0.658333l 4.47217, 0.553738l 4.47217, 0.464872l 4.47217, 0.389558l 4.47217, 0.325882l 4.47217, 0.272166l 4.47217, 0.226947l 4.47217, 0.188956l 4.47217, 0.1571l
  4.47217, 0.130435l 4.47217, 0.108153l 4.47217, 0.0895647l 4.47217, 0.0740812l 4.47217, 0.0612031l 4.47217, 0.0505071l 4.47217, 0.0416355l 4.47217, 0.0342866l 4.47217, 0.0282066l 4.47217, 0.0231824l 4.47217, 0.0190354l 4.47217, 0.0156162l 4.47217,
  0.0128001l 4.47217, 0.010483l 4.47217, 0.00857837l 4.47217, 0.00701428l 4.47217, 0.0308454h 134.165" fill="none" stroke="#d14382" stroke-width="3" stroke-dasharray=" 3, 3"/>
-<text xml:space="preserve" x="361.917" y="60.6318" fill="#eeeeee" font-size="10.2444" font-family="Helvetica">Mean measured
+<text xml:space="preserve" x="361.917" y="262.438" fill="#eeeeee" font-size="10.2444" font-family="Helvetica">Mean measured
 </text>
-<path d="M319.752,56.6474h 34.7244" fill="none" stroke="#0052c5" stroke-width="3"/>
-<text xml:space="preserve" x="361.917" y="88.1017" fill="#eeeeee" font-size="10.2444" font-family="Helvetica">Mean expected
+<path d="M319.752,258.454h 34.7244" fill="none" stroke="#0052c5" stroke-width="3"/>
+<text xml:space="preserve" x="361.917" y="289.908" fill="#eeeeee" font-size="10.2444" font-family="Helvetica">Mean expected
 </text>
-<path d="M319.752,84.9711h 34.7244" fill="none" stroke="#d14382" stroke-width="3" stroke-dasharray=" 3, 3"/></svg>
+<path d="M319.752,286.777h 34.7244" fill="none" stroke="#d14382" stroke-width="3" stroke-dasharray=" 3, 3"/>
+<text xml:space="preserve" x="450.901" y="58.1045" fill="#eeeeee" font-size="11.8685" font-family="Helvetica" font-weight="bold" font-style="oblique">Muon Collider
+</text>
+<text xml:space="preserve" x="486.192" y="74.0992" fill="#eeeeee" font-size="9.59476" font-family="Helvetica" font-weight="bold"> = 25 GeV
+</text>
+<text xml:space="preserve" x="482.777" y="76.1484" fill="#eeeeee" font-size="6.56317" font-family="Times">&#0947;
+</text>
+<text xml:space="preserve" x="475.946" y="74.0992" fill="#eeeeee" font-size="9.59476" font-family="Helvetica" font-weight="bold" font-style="oblique">E
+</text>
+<text xml:space="preserve" x="421.872" y="74.0992" fill="#eeeeee" font-size="9.59476" font-family="Helvetica" font-weight="bold">Photon Gun 
+</text></svg>
