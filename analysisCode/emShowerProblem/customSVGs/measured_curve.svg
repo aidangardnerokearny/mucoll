@@ -1,0 +1,92 @@
+<?xml version="1.0" standalone="no"?>
+<svg width="567.429" height="354.546" viewBox="0 0 567.429 354.546" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges">
+<title>
+customSVGs/measured_curve.svg
+</title>
+<desc>
+Creator: ROOT Version 6.40.00
+CreationDate: Wed Jul 29 16:06:13 2026</desc>
+<defs>
+</defs>
+<rect x="74.2008" y="35.4046" width="464.882" height="272.616" fill="none" stroke="black"/>
+<rect x="74.2008" y="35.4046" width="464.882" height="272.616" fill="none" stroke="black"/>
+<path d="M74.2008,308.02h 464.882" fill="none" stroke="#eeeeee"/>
+<path d="M74.2008,302.214v 5.80636M92.0895,305.117v 2.90318M109.978,305.117v 2.90318M127.867,305.117v 2.90318M145.755,305.117v 2.90318M163.644,302.214v 5.80636M181.533,305.117v 2.90318M199.421,305.117v 2.90318M217.31,305.117v 2.90318M235.199,305.117v
+ 2.90318M253.088,302.214v 5.80636M270.976,305.117v 2.90318M288.865,305.117v 2.90318M306.754,305.117v 2.90318M324.642,305.117v 2.90318M342.531,302.214v 5.80636M360.42,305.117v 2.90318M378.308,305.117v 2.90318M396.197,305.117v 2.90318M414.086,305.117v
+ 2.90318M431.974,302.214v 5.80636M449.863,305.117v 2.90318M467.752,305.117v 2.90318M485.64,305.117v 2.90318M503.529,305.117v 2.90318M521.418,302.214v 5.80636" fill="none" stroke="#eeeeee"/>
+<text xml:space="preserve" x="71.0702" y="319.704" fill="#eeeeee" font-size="11.8685" font-family="Helvetica">0
+</text>
+<text xml:space="preserve" x="157.383" y="319.704" fill="#eeeeee" font-size="11.8685" font-family="Helvetica">10
+</text>
+<text xml:space="preserve" x="246.826" y="319.704" fill="#eeeeee" font-size="11.8685" font-family="Helvetica">20
+</text>
+<text xml:space="preserve" x="336.27" y="319.704" fill="#eeeeee" font-size="11.8685" font-family="Helvetica">30
+</text>
+<text xml:space="preserve" x="425.713" y="319.704" fill="#eeeeee" font-size="11.8685" font-family="Helvetica">40
+</text>
+<text xml:space="preserve" x="515.156" y="319.704" fill="#eeeeee" font-size="11.8685" font-family="Helvetica">50
+</text>
+<text xml:space="preserve" x="535.667" y="329.27" fill="#eeeeee" font-size="11.8685" font-family="Helvetica">)
+</text>
+<text xml:space="preserve" x="531.114" y="335.531" fill="#eeeeee" font-size="8.07897" font-family="Helvetica">0
+</text>
+<text xml:space="preserve" x="486.147" y="329.27" fill="#eeeeee" font-size="11.8685" font-family="Helvetica">Depth (X
+</text>
+<path d="M74.2008,35.4046h 464.882" fill="none" stroke="#eeeeee"/>
+<path d="M74.2008,41.211v -5.80636M92.0895,38.3078v -2.90318M109.978,38.3078v -2.90318M127.867,38.3078v -2.90318M145.755,38.3078v -2.90318M163.644,41.211v -5.80636M181.533,38.3078v -2.90318M199.421,38.3078v -2.90318M217.31,38.3078v
+ -2.90318M235.199,38.3078v -2.90318M253.088,41.211v -5.80636M270.976,38.3078v -2.90318M288.865,38.3078v -2.90318M306.754,38.3078v -2.90318M324.642,38.3078v -2.90318M342.531,41.211v -5.80636M360.42,38.3078v -2.90318M378.308,38.3078v
+ -2.90318M396.197,38.3078v -2.90318M414.086,38.3078v -2.90318M431.974,41.211v -5.80636M449.863,38.3078v -2.90318M467.752,38.3078v -2.90318M485.64,38.3078v -2.90318M503.529,38.3078v -2.90318M521.418,41.211v -5.80636" fill="none" stroke="#eeeeee"/>
+<path d="M74.2008,308.02v -272.616" fill="none" stroke="#eeeeee"/>
+<path d="M82.9315,308.02h -8.73071M78.5661,300.884h -4.36535M78.5661,293.748h -4.36535M78.5661,286.612h -4.36535M82.9315,279.476h -8.73071M78.5661,272.34h -4.36535M78.5661,265.204h -4.36535M78.5661,258.068h -4.36535M82.9315,250.932h
+ -8.73071M78.5661,243.795h -4.36535M78.5661,236.659h -4.36535M78.5661,229.523h -4.36535M82.9315,222.387h -8.73071M78.5661,215.251h -4.36535M78.5661,208.115h -4.36535M78.5661,200.979h -4.36535M82.9315,193.843h -8.73071M78.5661,186.707h
+ -4.36535M78.5661,179.571h -4.36535M78.5661,172.435h -4.36535M82.9315,165.299h -8.73071M78.5661,158.163h -4.36535M78.5661,151.027h -4.36535M78.5661,143.89h -4.36535M82.9315,136.754h -8.73071M78.5661,129.618h -4.36535M78.5661,122.482h
+ -4.36535M78.5661,115.346h -4.36535M82.9315,108.21h -8.73071M78.5661,101.074h -4.36535M78.5661,93.938h -4.36535M78.5661,86.8019h -4.36535M82.9315,79.6658h -8.73071M78.5661,72.5298h -4.36535M78.5661,65.3937h -4.36535M78.5661,58.2576h
+ -4.36535M82.9315,51.1216h -8.73071M78.5661,43.9855h -4.36535M78.5661,36.8494h -4.36535" fill="none" stroke="#eeeeee"/>
+<text xml:space="preserve" x="65.1049" y="312.574" fill="#eeeeee" font-size="11.8685" font-family="Helvetica">0
+</text>
+<text xml:space="preserve" x="55.9976" y="284.029" fill="#eeeeee" font-size="11.8685" font-family="Helvetica">0.2
+</text>
+<text xml:space="preserve" x="55.4284" y="255.485" fill="#eeeeee" font-size="11.8685" font-family="Helvetica">0.4
+</text>
+<text xml:space="preserve" x="55.9976" y="226.941" fill="#eeeeee" font-size="11.8685" font-family="Helvetica">0.6
+</text>
+<text xml:space="preserve" x="55.9976" y="198.397" fill="#eeeeee" font-size="11.8685" font-family="Helvetica">0.8
+</text>
+<text xml:space="preserve" x="67.3817" y="170.137" fill="#eeeeee" font-size="11.8685" font-family="Helvetica">1
+</text>
+<text xml:space="preserve" x="55.9976" y="141.593" fill="#eeeeee" font-size="11.8685" font-family="Helvetica">1.2
+</text>
+<text xml:space="preserve" x="55.4284" y="113.048" fill="#eeeeee" font-size="11.8685" font-family="Helvetica">1.4
+</text>
+<text xml:space="preserve" x="55.9976" y="84.2195" fill="#eeeeee" font-size="11.8685" font-family="Helvetica">1.6
+</text>
+<text xml:space="preserve" x="55.9976" y="55.6752" fill="#eeeeee" font-size="11.8685" font-family="Helvetica">1.8
+</text>
+<g transform="rotate(-90,41.8357,135.585)">
+<text xml:space="preserve" x="41.8357" y="135.585" fill="#eeeeee" font-size="11.8685" font-family="Helvetica">Energy deposit / bin
+</text>
+</g>
+<path d="M539.083,308.02v -272.616" fill="none" stroke="#eeeeee"/>
+<path d="M530.352,308.02h 8.73071M534.717,300.884h 4.36535M534.717,293.748h 4.36535M534.717,286.612h 4.36535M530.352,279.476h 8.73071M534.717,272.34h 4.36535M534.717,265.204h 4.36535M534.717,258.068h 4.36535M530.352,250.932h 8.73071M534.717,243.795h
+ 4.36535M534.717,236.659h 4.36535M534.717,229.523h 4.36535M530.352,222.387h 8.73071M534.717,215.251h 4.36535M534.717,208.115h 4.36535M534.717,200.979h 4.36535M530.352,193.843h 8.73071M534.717,186.707h 4.36535M534.717,179.571h 4.36535M534.717,172.435h
+ 4.36535M530.352,165.299h 8.73071M534.717,158.163h 4.36535M534.717,151.027h 4.36535M534.717,143.89h 4.36535M530.352,136.754h 8.73071M534.717,129.618h 4.36535M534.717,122.482h 4.36535M534.717,115.346h 4.36535M530.352,108.21h 8.73071M534.717,101.074h
+ 4.36535M534.717,93.938h 4.36535M534.717,86.8019h 4.36535M530.352,79.6658h 8.73071M534.717,72.5298h 4.36535M534.717,65.3937h 4.36535M534.717,58.2576h 4.36535M530.352,51.1216h 8.73071M534.717,43.9855h 4.36535M534.717,36.8494h 4.36535" fill="none"
+ stroke="#eeeeee"/>
+<path d="M74.2008,305.511l 4.47217, -2.185l 4.47217, -5.20054l 4.47217, -8.62259l 4.47217, -12.5409l 4.47217, -25.4269l 4.47217, -22.4604l 4.47217, -33.4756l 4.47217, -22.9288l 4.47217, 5.639l 4.47217, -39.4989l 4.47217, -48.8828l 4.47217, 5.45421l
+ 4.47217, 25.2593l 4.47217, -4.84367l 4.47217, -1.38005l 4.47217, -7.07774l 4.47217, 11.3295l 4.47217, 25.7248l 4.47217, 27.333l 4.47217, 16.452l 4.47217, 19.7704l 4.47217, 15.0551l 4.47217, 6.60809l 4.47217, -10.7985l 4.47217, 21.4997l 4.47217,
+ -16.02l 4.47217, 1.98353l 4.47217, 41.547l 4.47217, -12.1806l 4.47217, 10.227l 4.47217, 14.1324l 4.47217, 7.71277l 4.47217, -9.62691l 4.47217, 12.1318l 4.47217, 0.152386l 4.47217, 4.19699l 4.47217, 4.59824l 4.47217, -2.52347l 4.47217, -2.26339l
+ 4.47217, 3.48089l 4.47217, 1.93848l 4.47217, 0.761265l 4.47217, 4.76643l 4.47217, 2.33061l 4.47217, 0.36074l 4.47217, -1.00481l 4.47217, -2.08162l 4.47217, -1.40631l 4.47217, 3.63758l 4.47217, -1.49944l 4.47217, -0.746248l 4.47217, 3.10084h 210.192"
+ fill="none" stroke="#0052c5" stroke-width="3"/>
+<text xml:space="preserve" x="361.917" y="294.302" fill="#eeeeee" font-size="10.2444" font-family="Helvetica">Measured
+</text>
+<path d="M319.752,290.318h 34.7244" fill="none" stroke="#0052c5" stroke-width="3"/>
+<text xml:space="preserve" x="450.901" y="58.1045" fill="#eeeeee" font-size="11.8685" font-family="Helvetica" font-weight="bold" font-style="oblique">Muon Collider
+</text>
+<text xml:space="preserve" x="486.192" y="74.0992" fill="#eeeeee" font-size="9.59476" font-family="Helvetica" font-weight="bold"> = 24 GeV
+</text>
+<text xml:space="preserve" x="482.777" y="76.1484" fill="#eeeeee" font-size="6.56317" font-family="Times">&#0947;
+</text>
+<text xml:space="preserve" x="473.67" y="74.0992" fill="#eeeeee" font-size="9.59476" font-family="Helvetica" font-weight="bold" font-style="oblique"> E
+</text>
+<text xml:space="preserve" x="419.595" y="74.0992" fill="#eeeeee" font-size="9.59476" font-family="Helvetica" font-weight="bold">Photon Gun 
+</text></svg>
