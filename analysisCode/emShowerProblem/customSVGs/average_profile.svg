@@ -5,7 +5,7 @@ customSVGs/average_profile.svg
 </title>
 <desc>
 Creator: ROOT Version 6.40.00
-CreationDate: Wed Jul 29 10:06:24 2026</desc>
+CreationDate: Wed Jul 29 22:15:44 2026</desc>
 <defs>
 </defs>
 <rect x="74.2008" y="35.4046" width="464.882" height="272.616" fill="none" stroke="black"/>
@@ -76,25 +76,12 @@ CreationDate: Wed Jul 29 10:06:24 2026</desc>
  4.47217, 1.30272l 4.47217, 1.10566l 4.47217, 0.936172l 4.47217, 0.790876l 4.47217, 0.666705l 4.47217, 0.560895l 4.47217, 0.470972l 4.47217, 0.394746l 4.47217, 0.330282l 4.47217, 0.275889l 4.47217, 0.230091l 4.47217, 0.191606l 4.47217, 0.159329l
  4.47217, 0.132306l 4.47217, 0.109722l 4.47217, 0.0908771l 4.47217, 0.0751776l 4.47217, 0.0621176l 4.47217, 0.0512689l 4.47217, 0.0422691l 4.47217, 0.0348129l 4.47217, 0.0286433l 4.47217, 0.0235442l 4.47217, 0.0193349l 4.47217, 0.0158638l 4.47217,
  0.0130045l 4.47217, 0.0106516l 4.47217, 0.00871732l 4.47217, 0.00712867l 4.47217, 0.031365h 134.165" fill="none" stroke="#d14382" stroke-width="3" stroke-dasharray=" 3, 3"/>
-<path d="M74.2008,308.02l 4.47217, -0.735435l 4.47217, -5.19566l 4.47217, -12.1988l 4.47217, -19.1223l 4.47217, -24.3205l 4.47217, -27.1097l 4.47217, -27.4701l 4.47217, -25.7602l 4.47217, -22.5053l 4.47217, -18.259l 4.47217, -13.523l 4.47217,
- -8.70843l 4.47217, -4.12442l 4.47217, 0.0178757l 4.47217, 3.59209l 4.47217, 6.5404l 4.47217, 8.85691l 4.47217, 10.5724l 4.47217, 11.7417l 4.47217, 12.4328l 4.47217, 12.7196l 4.47217, 12.6758l 4.47217, 12.3712l 4.47217, 11.8691l 4.47217, 11.2252l
- 4.47217, 10.4869l 4.47217, 9.69368l 4.47217, 8.87735l 4.47217, 8.06294l 4.47217, 7.2694l 4.47217, 6.51057l 4.47217, 5.79596l 4.47217, 5.13156l 4.47217, 4.52055l 4.47217, 3.96395l 4.47217, 3.46108l 4.47217, 3.01009l 4.47217, 2.60826l 4.47217,
- 2.25234l 4.47217, 1.93877l 4.47217, 1.66385l 4.47217, 1.42389l 4.47217, 1.21531l 4.47217, 1.03468l 4.47217, 0.878823l 4.47217, 0.744771l 4.47217, 0.629827l 4.47217, 0.53155l 4.47217, 0.447748l 4.47217, 0.37647l 4.47217, 0.315988l 4.47217, 0.264783l
- 4.47217, 0.221523l 4.47217, 0.18505l 4.47217, 0.154357l 4.47217, 0.128575l 4.47217, 0.106957l 4.47217, 0.088859l 4.47217, 0.0737324l 4.47217, 0.0611082l 4.47217, 0.0505875l 4.47217, 0.0418321l 4.47217, 0.0345553l 4.47217, 0.0285151l 4.47217,
- 0.0235074l 4.47217, 0.0193607l 4.47217, 0.0159307l 4.47217, 0.0130967l 4.47217, 0.0107576l 4.47217, 0.00882881l 4.47217, 0.00724l 4.47217, 0.0323142h 120.749" fill="none" stroke="#e3ab0f" stroke-width="3" stroke-dasharray=" 1, 2"/>
-<text xml:space="preserve" x="361.917" y="259.488" fill="#eeeeee" font-size="10.2444" font-family="Helvetica">Mean measured
+<text xml:space="preserve" x="361.917" y="265.093" fill="#eeeeee" font-size="10.2444" font-family="Helvetica">Mean measured
 </text>
-<path d="M319.752,255.503h 34.7244" fill="none" stroke="#0052c5" stroke-width="3"/>
-<text xml:space="preserve" x="361.917" y="281.057" fill="#eeeeee" font-size="10.2444" font-family="Helvetica">Mean expected
+<path d="M319.752,261.109h 34.7244" fill="none" stroke="#0052c5" stroke-width="3"/>
+<text xml:space="preserve" x="361.917" y="297.874" fill="#eeeeee" font-size="10.2444" font-family="Helvetica">Mean expected
 </text>
-<path d="M319.752,277.926h 34.7244" fill="none" stroke="#d14382" stroke-width="3" stroke-dasharray=" 3, 3"/>
-<text xml:space="preserve" x="423.961" y="301.431" fill="#eeeeee" font-size="10.2444" font-family="Helvetica"> = 25 GeV)
-</text>
-<text xml:space="preserve" x="420.546" y="306.098" fill="#eeeeee" font-size="6.99626" font-family="Times">&#0947;
-</text>
-<text xml:space="preserve" x="361.917" y="301.431" fill="#eeeeee" font-size="10.2444" font-family="Helvetica">Hand-calc. (E
-</text>
-<path d="M319.752,300.349h 34.7244" fill="none" stroke="#e3ab0f" stroke-width="3" stroke-dasharray=" 1, 2"/>
+<path d="M319.752,294.743h 34.7244" fill="none" stroke="#d14382" stroke-width="3" stroke-dasharray=" 3, 3"/>
 <text xml:space="preserve" x="450.901" y="58.1045" fill="#eeeeee" font-size="11.8685" font-family="Helvetica" font-weight="bold" font-style="oblique">Muon Collider
 </text>
 <text xml:space="preserve" x="486.192" y="74.0992" fill="#eeeeee" font-size="9.59476" font-family="Helvetica" font-weight="bold"> = 25 GeV
