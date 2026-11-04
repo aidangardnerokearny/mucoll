@@ -19,6 +19,7 @@ Usage
 """
 
 import argparse
+import math
 import os
 import sys
 import array
@@ -37,6 +38,22 @@ ROOT.gROOT.SetBatch(True)
 ROOT.gStyle.SetOptStat(0)
 
 BIN_WIDTH = 0.5   # radiation lengths per bin (must match PandoraSettings)
+
+# --- Longo/PDG analytic EM shower profile (hand calculation) ---
+# dE/dt = E0 * b * (b*t)^(a-1) * e^(-b*t) / Gamma(a),  a = 1 + C + b*ln(E0/Ec)
+# Same b, Ec, and C_gamma as electronPhotonCurvePlotter.jl.
+HAND_CALC_ENERGY = 25.0   # GeV, matches the "Photon Gun" label
+SHOWER_B = 0.5
+CRITICAL_ENERGY = 0.08    # GeV
+C_GAMMA = 0.5
+
+
+def longo_profile_fraction(t, energy, b=SHOWER_B, ec=CRITICAL_ENERGY, c=C_GAMMA, bin_width=BIN_WIDTH):
+    """Fractional energy deposit in a bin of width `bin_width` centered near depth t (in X_0)."""
+    a = 1 + c + b * math.log(energy / ec)
+    if t <= 0:
+        return 0.0
+    return b * (b * t) ** (a - 1) * math.exp(-b * t) / math.gamma(a) * bin_width
 
 # --- Color scheme (matches profileCompCustom.jl / rzCrossSectionCustom.jl) ---
 COLORS_HEX = {
@@ -155,33 +172,51 @@ t_avg = [i * BIN_WIDTH for i in range(max_bins) if counts[i] > 0]
 avg_meas = [sum_meas[i] / counts[i] for i in range(max_bins) if counts[i] > 0]
 avg_exp = [sum_exp[i] / counts[i] for i in range(max_bins) if counts[i] > 0]
 
+hand_calc = [longo_profile_fraction(t, HAND_CALC_ENERGY) for t in t_avg]
+
 # --- Plot ---
 c = make_transparent_canvas("c_avg", "Average profile", 1000, 650)
 
-y_max = max(max(avg_meas), max(avg_exp)) * 1.25
+y_max = max(max(avg_meas), max(avg_exp), max(hand_calc)) * 1.25
 frame = c.DrawFrame(0, 0, max(t_avg) * 1.05, y_max)
 style_frame(frame, "Depth (X_{0})", "Fractional energy deposit / bin")
 
 g_meas = make_graph(t_avg, avg_meas, COLORS["blue"], line_style=1, line_width=3)
-g_exp = make_graph(t_avg, avg_exp, COLORS["nominal"], line_style=2, line_width=3)
+g_exp = make_graph(t_avg, avg_exp, COLORS["vacuum"], line_style=2, line_width=3)
+g_hand = make_graph(t_avg, hand_calc, COLORS["gold"], line_style=3, line_width=3)
 g_meas.Draw("L SAME")
 g_exp.Draw("L SAME")
+#g_hand.Draw("L SAME")
 
-leg = ROOT.TLegend(0.55, 0.72, 0.90, 0.88)
+# Legend moved to the bottom right to make room for the "Muon Collider /
+# Photon Gun" label in the upper right corner (matches the axislegend(:rb)
+# placement used alongside the photon25GeVLab annotation in profileCompCustom.jl).
+leg = ROOT.TLegend(0.55, 0.12, 0.90, 0.31)
 leg.SetBorderSize(0)
 leg.SetFillStyle(0)
 leg.SetTextColor(TEXT_COLOR)
 leg.SetTextSize(0.030)
 leg.AddEntry(g_meas, "Mean measured", "l")
 leg.AddEntry(g_exp, "Mean expected", "l")
+#leg.AddEntry(g_hand, "Hand-calc. (E_{#gamma} = 25 GeV)", "l")
 leg.Draw()
 
-label = ROOT.TLatex()
-label.SetNDC(True)
-label.SetTextColor(TEXT_COLOR)
-label.SetTextSize(0.035)
-label.SetTextAlign(13)
-label.DrawLatex(0.14, 0.97, f"#font[62]{{Average longitudinal profile}} (N = {len(clusters)} clusters)")
+# Upper right label, matching the photon25GeVLab standard in profileCompCustom.jl:
+# a bold-italic "Muon Collider" line above a "Photon Gun E_gamma = 25 GeV" line.
+label_top = ROOT.TLatex()
+label_top.SetNDC(True)
+label_top.SetTextColor(TEXT_COLOR)
+label_top.SetTextFont(72)  # Helvetica bold italic
+label_top.SetTextAlign(33)  # right, top
+label_top.SetTextSize(0.035)
+label_top.DrawLatex(0.93, 0.86, "Muon Collider")
+
+label_sub = ROOT.TLatex()
+label_sub.SetNDC(True)
+label_sub.SetTextColor(TEXT_COLOR)
+label_sub.SetTextAlign(33)
+label_sub.SetTextSize(0.028)
+label_sub.DrawLatex(0.93, 0.81, "Photon Gun #it{ E}_{#gamma} = 25 GeV")
 
 os.makedirs(args.output_dir, exist_ok=True)
 out_path = os.path.join(args.output_dir, "average_profile.svg")

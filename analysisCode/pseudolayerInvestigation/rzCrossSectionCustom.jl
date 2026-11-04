@@ -60,6 +60,10 @@ const COLORS = Dict(
   :axis    => "#eeeeee", #white
 )
 
+const GRADIENT = cgrad([COLORS[:purple], COLORS[:blue], COLORS[:vacuum]], scale=:exp)
+#const GRADIENT = cgrad([COLORS[:purple], COLORS[:blue], COLORS[:vacuum]], rev=true)
+
+
 const CASE_COLOR = Dict("nominal" => COLORS[:nominal], "vacuum" => COLORS[:vacuum])
 
 function styled_axis(fig_pos; xlabel, ylabel, kwargs...)
@@ -102,7 +106,7 @@ function cross_section(d)
         poly!(ax, Point2f[(-s.halfz, s.rin), (s.halfz, s.rin), (s.halfz, s.rout), (-s.halfz, s.rout)];
               color = (:red, 0.18), strokecolor = :red, strokewidth = 0.5)
         text!(ax, 0.0, (s.rin + s.rout) / 2;
-              text = "solenoid ~4 X0", color = :red, fontsize = 12, align = (:center, :center))
+              text = L"\text{Solenoid } ~4 X_0", color = :red, fontsize = 12, align = (:center, :center))
     end
 
     for row in eachrow(L)
@@ -112,20 +116,20 @@ function cross_section(d)
         pl = Float64(row.pseudolayer)
         if row.region == "barrel"
             lines!(ax, [-e.outerZ_mm, e.outerZ_mm], [row.position_mm, row.position_mm];
-                   color = pl, colormap = :viridis, colorrange = (0, plmax), linewidth = 1.4)
+                   color = pl, colormap = GRADIENT, colorrange = (0, plmax), linewidth = 1.4)
         else
             lines!(ax, [row.position_mm, row.position_mm], [e.innerR_mm, e.outerR_mm];
-                   color = pl, colormap = :viridis, colorrange = (0, plmax), linewidth = 1.4)
+                   color = pl, colormap = GRADIENT, colorrange = (0, plmax), linewidth = 1.4)
             lines!(ax, [-row.position_mm, -row.position_mm], [e.innerR_mm, e.outerR_mm];
-                   color = pl, colormap = :viridis, colorrange = (0, plmax), linewidth = 1.4)
+                   color = pl, colormap = GRADIENT, colorrange = (0, plmax), linewidth = 1.4)
         end
     end
 
-    Colorbar(fig[1, 2]; colormap = :viridis, limits = (0, plmax), label = "pseudolayer",
+    Colorbar(fig[1, 2]; colormap = GRADIENT, limits = (0, plmax), label = "pseudolayer",
              labelcolor = COLORS[:text], ticklabelcolor = COLORS[:text],
              tickcolor = COLORS[:axis], spinewidth = 0)
 
-    Label(fig[0, :], "MAIA r-z cross-section — $(d.label)"; color = COLORS[:text], fontsize = 20)
+    Label(fig[0, :], ""; color = COLORS[:text], fontsize = 20)
 
     fig
 end

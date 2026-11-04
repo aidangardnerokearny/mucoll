@@ -204,7 +204,7 @@ function sep_plot(title, xlabel, nom_vals, vac_vals;
     end
  
     axislegend(ax;
-        position         = :rt,
+        position         = :rb,
         framevisible     = false,
         backgroundcolor  = :transparent,
         labelcolor       = COLORS[:text],
@@ -216,7 +216,7 @@ function sep_plot(title, xlabel, nom_vals, vac_vals;
         line_dy = 0.07   # vertical spacing between lines, in axis-relative units
         y0 = 0.95        # top line position
         for (k, lab) in enumerate(labels)
-            text!(ax, 0.07, y0 - (k-1)*line_dy;
+            text!(ax, 0.74, y0 - (k-1)*line_dy;
                   text     = lab,
                   space    = :relative,
                   align    = (:left, :top),

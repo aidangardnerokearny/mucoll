@@ -280,7 +280,8 @@ def plot_per_ebin(data, variables, n_ebins, e_edges, out_dir):
             hists = data[var].get(i)
             if not hists:
                 continue
-            h_sig = make_hist(f"h_sig_e{i}_{var}", hists["sig"], COLORS["blue"])
+            h_sig = make_hist(f"h_sig_e{i}_{var}", hists["sig"],
+                              COLORS["blue"])
             h_bkg = make_hist(f"h_bkg_e{i}_{var}", hists["bkg"], COLORS["vacuum"])
             style_hist_axes(h_sig, xlabel, title_size=0.06, label_size=0.05)
             ymax = max(h_sig.GetMaximum(), h_bkg.GetMaximum()) * 1.2
@@ -296,18 +297,31 @@ def plot_per_ebin(data, variables, n_ebins, e_edges, out_dir):
             title.SetTextSize(0.07)
             title.DrawLatex(0.5, 0.93, nice)
 
-            leg = ROOT.TLegend(0.45, 0.72, 0.92, 0.90)
+            leg = ROOT.TLegend(0.20, 0.67, 0.52, 0.85)
             leg.SetBorderSize(0)
             leg.SetFillStyle(0)
             leg.SetTextColor(TEXT_COLOR)
-            leg.SetTextSize(0.06)
+            leg.SetTextSize(0.03)
             leg.AddEntry(h_sig, "Signal (#gamma)", "f")
             leg.AddEntry(h_bkg, "Background", "f")
-            leg.Draw()
+
+            label_top = ROOT.TLatex()
+            label_top.SetNDC(True)
+            label_top.SetTextColor(TEXT_COLOR)
+            label_top.SetTextFont(72)  # Helvetica bold italic
+            label_top.SetTextAlign(33)  # right, top
+            label_top.SetTextSize(0.035)
+            label_top.DrawLatex(0.90, 0.84, r"Muon Collider")
+
+
+            if j==0:
+                leg.Draw()
+
             keep += [h_sig, h_bkg, leg]
 
         c.cd(0)
-        draw_suptitle(c, f"Photon ID PDFs -- {ebin_label(i, e_edges, n_ebins)}")
+        #draw_suptitle(c, f"Photon ID PDFs -- {ebin_label(i, e_edges, n_ebins)}")
+        draw_suptitle(c, "")
 
         fname = os.path.join(out_dir, f"pandora_all_vars_ebin{i:02d}.svg")
         c.SaveAs(fname)
@@ -323,6 +337,10 @@ def plot_likelihood_ratios(data, variables, n_ebins, e_edges, out_dir):
     nv = len(variables)
     ncols = 3
     nrows = (nv + ncols - 1) // ncols
+    if nv == nrows * ncols:
+        # No leftover pad for the energy-bin legend -- add one so it
+        # doesn't get drawn on top of (and hide) the last variable panel.
+        nrows += 1
 
     c = ROOT.TCanvas("c_ratios", "likelihood ratios", ncols * 430, nrows * 370)
     c.SetFillColorAlpha(ROOT.kWhite, 0)
@@ -381,15 +399,19 @@ def plot_likelihood_ratios(data, variables, n_ebins, e_edges, out_dir):
         title.DrawLatex(0.5, 0.94, nice)
         keep.append(title)
 
-    # Colour-coded energy-bin legend on the last (possibly empty) pad
+    # Colour-coded energy-bin legend, given its own dedicated pad so it
+    # never overlaps a variable panel. Sized to its content rather than
+    # filling the whole pad, and laid out in columns to stay compact.
     leg_pad_idx = nrows * ncols
     pad = c.cd(leg_pad_idx)
     style_pad(pad)
-    leg = ROOT.TLegend(0.02, 0.02, 0.98, 0.98)
+    leg_ncols = 3 if n_ebins > 6 else 2
+    leg = ROOT.TLegend(0.05, 0.35, 0.95, 0.85)
     leg.SetBorderSize(0)
     leg.SetFillStyle(0)
     leg.SetTextColor(TEXT_COLOR)
-    leg.SetTextSize(0.06)
+    leg.SetTextSize(0.05)
+    leg.SetNColumns(leg_ncols)
     leg.SetHeader("#font[62]{Energy bin}")
     dummy_graphs = []
     for i in range(n_ebins):
@@ -403,7 +425,7 @@ def plot_likelihood_ratios(data, variables, n_ebins, e_edges, out_dir):
     keep += dummy_graphs + [leg]
 
     c.cd(0)
-    draw_suptitle(c, "Log-likelihood ratio  log(S/B)  per variable & energy bin")
+    draw_suptitle(c, "")
 
     fname = os.path.join(out_dir, "pandora_likelihood_ratios.svg")
     c.SaveAs(fname)
