@@ -179,7 +179,6 @@ def read_profiles(profile_files):
             "measured":    [entry.measuredProfile[i] for i in range(n_bins)],
             "expected":    [entry.expectedProfile[i] for i in range(n_bins)],
             "discrepancy": entry.profileDiscrepancy,
-            "start":       entry.profileStart,
             "pdg":         entry.pdgCode,
         })
     return clusters
@@ -193,18 +192,12 @@ def average_profile(clusters):
 
     for cl in clusters:
         total = sum(cl["measured"]) or 1.0
-        # Pandora stores the expected profile starting at bin 0, but compares it to the
-        # measured profile shifted by the fitted start (expected[i - offset] vs measured[i]),
-        # so apply the same shift here before averaging.
-        offset = int(round(cl["start"] / BIN_WIDTH))
         for i in range(cl["nBins"]):
             sum_meas[i] += cl["measured"][i] / total
-            if i >= offset:
-                sum_exp[i] += cl["expected"][i - offset] / total
+            sum_exp[i] += cl["expected"][i] / total
             counts[i] += 1
 
-    # Plot at bin centres: measured bin i spans [i, i+1) * BIN_WIDTH in X0
-    t_avg = [(i + 0.5) * BIN_WIDTH for i in range(max_bins) if counts[i] > 0]
+    t_avg = [i * BIN_WIDTH for i in range(max_bins) if counts[i] > 0]
     avg_meas = [sum_meas[i] / counts[i] for i in range(max_bins) if counts[i] > 0]
     avg_exp = [sum_exp[i] / counts[i] for i in range(max_bins) if counts[i] > 0]
     return t_avg, avg_meas, avg_exp
