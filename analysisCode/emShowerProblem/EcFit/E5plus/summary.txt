@@ -1,0 +1,39 @@
+ecFit.jl — 5 samples, direction = truth, threads = 16
+  S1_E5          files    4  events   10000  truth    9061  fiducial    8459  selected    8374  (E_reco/E_true cut 0.7940)
+  S1_E10         files    4  events   10000  truth    9146  fiducial    8571  selected    8484  (E_reco/E_true cut 0.8556)
+  S1_E25         files   10  events   10000  truth    9174  fiducial    8594  selected    8506  (E_reco/E_true cut 0.9106)
+  S1_E50         files   20  events   10000  truth    9120  fiducial    8552  selected    8465  (E_reco/E_true cut 0.9373)
+  S1_E100        files   40  events   10000  truth    9094  fiducial    8583  selected    8496  (E_reco/E_true cut 0.9577)
+Plugin config: binWidth 0.5 X0, nBins 100, minCos 0.3, Ec 0.08 GeV, p0 1.25, p1 0.5, maxDiff 0.1, layerAtIp 1
+Closure: 65186/65186 clusters pass (100.0000%); start mismatches 0, N_end mismatches 0; worst rel. err: PD 2.7e-06, δ 2.5e-06, bin 5.2e-07, E_clus(hits) 5.9e-07
+
+F1 (merged showers, δ at s = 0) and F4 (mean-profile χ²):
+  S1_E5          N   8374  Ec = 0.022574 GeV  (u = -3.7909 ± 0.0181)   <δ> default 0.4894 → fitted 0.4233   F4: Ec = 0.020821 (Δu = -0.0809)
+  S1_E10         N   8484  Ec = 0.024259 GeV  (u = -3.7190 ± 0.0171)   <δ> default 0.4281 → fitted 0.3638   F4: Ec = 0.021278 (Δu = -0.1311)
+  S1_E25         N   8506  Ec = 0.023976 GeV  (u = -3.7307 ± 0.0157)   <δ> default 0.3858 → fitted 0.3159   F4: Ec = 0.019823 (Δu = -0.1902)
+  S1_E50         N   8465  Ec = 0.02353 GeV  (u = -3.7495 ± 0.0164)   <δ> default 0.3590 → fitted 0.2869   F4: Ec = 0.019618 (Δu = -0.1818)
+  S1_E100        N   8496  Ec = 0.024687 GeV  (u = -3.7015 ± 0.0166)   <δ> default 0.3343 → fitted 0.2656   F4: Ec = 0.019833 (Δu = -0.2189)
+
+F2 (per group):
+  group S1       5 samples: χ²/ndf = 15.30/4 (p = 0.00412), spread in u = 0.0894 → TREND with energy
+    combined (equal weight):   Ec = 0.023833 GeV  (u = -3.7367 ± 0.0073)
+    inverse-variance mean:     Ec = 0.02383 GeV  (u = -3.7368 ± 0.0075)  [systematic variant]
+    joint: α = 3.1479 ± 0.0109, p1 = 0.4907 ± 0.0034  → effective Ec (p0 = 1.25) = 0.020907 GeV
+
+F3 (main cluster, production inputs, by fragmentation class):
+  S1_E5           A: n=7927   Δu = +0.0997 ± 0.0173  B: n=150    —                  C: n=297    Δu = -0.2143 ± 0.0979
+  S1_E10          A: n=6999   Δu = +0.1408 ± 0.0186  B: n=1398   Δu = +0.0699 ± 0.0407  C: n=87     —                
+  S1_E25          A: n=5205   Δu = +0.2647 ± 0.0195  B: n=3300   Δu = +0.0462 ± 0.0283  C: n=1      —                
+  S1_E50          A: n=6550   Δu = +0.2768 ± 0.0173  B: n=1913   Δu = +0.0675 ± 0.0375  C: n=2      —                
+  S1_E100         A: n=8410   Δu = +0.3108 ± 0.0148  B: n=86     —                  C: n=0      —                
+
+ADOPT (primary group S1, energy trend): joint fit, p1 = 0.49071, effective Ec = 0.020907 GeV
+  <LongProfileCriticalEnergy>0.0209072</LongProfileCriticalEnergy>
+  <LongProfileParameter1>0.490713</LongProfileParameter1>
+  <δ> per sample, default → adopted parameters:
+    S1_E5          0.4894 → 0.4233  (-13.5%)
+    S1_E10         0.4281 → 0.3639  (-15.0%)
+    S1_E25         0.3858 → 0.3159  (-18.1%)
+    S1_E50         0.3590 → 0.2869  (-20.1%)
+    S1_E100        0.3343 → 0.2656  (-20.5%)
+Outputs in /home/aidangardnerokearny/mucoll/analysisCode/emShowerProblem/EcFit/E5plus

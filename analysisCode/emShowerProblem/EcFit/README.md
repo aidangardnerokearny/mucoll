@@ -32,3 +32,16 @@ The run uses the global Julia environment, which needs UnROOT, SpecialFunctions,
 - Bug fix: when the joint (α, p1) fit is adopted, `mean_profiles.csv` and `events.csv` now use the adopted (α, p1).
   Before the fix they silently used the default 80 MeV.
 - `summary.txt` now lists ⟨δ⟩ per energy at the default and at the adopted parameters.
+
+## Variant: E ≥ 5 GeV only (`E5plus/`)
+
+This variant drops the energies below 5 GeV, where E_c rises steeply. Above 5 GeV E_c is close to a plateau, and
+the operating energies reach about 10 TeV.
+
+```
+julia -t 16 Ecfit.jl ecfit_E5plus.toml            # truth direction        → E5plus/
+julia -t 16 Ecfit.jl ecfit_E5plus_mainfit.toml    # main-cluster direction → E5plus/direction_mainfit/
+julia plot_ecfit.jl E5plus;  julia plot_ecfit.jl E5plus/direction_mainfit
+```
+
+The file set matches the full fit. Each `run.log` holds the console output of its run.

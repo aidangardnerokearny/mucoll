@@ -1,0 +1,53 @@
+# Variant: fit restricted to E >= 5 GeV (plateau region; operating energies reach 10 TeV).
+# E_c fit configuration (jobs/fit_plan.md). Run from this directory:
+#   julia -t 16 Ecfit.jl ecfit.toml
+# Inputs: baseline reconstruction (E_c = 80 MeV) of sample S1 = vacuum-solenoid single photons.
+# S5 (nominal geometry) is evaluated with the fitted E_c later, never fitted (plan §Samples), so it is not listed here.
+
+output_dir = "E5plus/direction_mainfit"
+primary_group = "S1"
+
+[selection]
+gun_pdg = 22
+require_single_root = true        # rejects photons converting in the tracker (r < 500 mm), see Truth.gunIsPfoTarget
+require_endpoint = true
+min_conversion_radius_mm = 1857.0 # ECAL barrel inner face (MAIA_v0 ECalBarrel_inner_radius): no conversion upstream
+max_abs_costheta = 0.70           # barrel fiducial; ECAL inner face ends at |cos| = 0.779 (generated up to 0.75)
+containment_percentile = 1.0
+gun_weight_min = 0.5
+
+[fit]
+direction = "mainfit"
+
+[closure]
+enabled = true
+
+[[sample]]
+label = "S1_E5"
+group = "S1"
+energy_gev = 5.0
+files = ["/home/aidangardnerokearny/mucoll/jobs/output/ec_fit/S1/E5/reco_baseline/profiles_*.root"]
+
+[[sample]]
+label = "S1_E10"
+group = "S1"
+energy_gev = 10.0
+files = ["/home/aidangardnerokearny/mucoll/jobs/output/ec_fit/S1/E10/reco_baseline/profiles_*.root"]
+
+[[sample]]
+label = "S1_E25"
+group = "S1"
+energy_gev = 25.0
+files = ["/home/aidangardnerokearny/mucoll/jobs/output/ec_fit/S1/E25/reco_baseline/profiles_*.root"]
+
+[[sample]]
+label = "S1_E50"
+group = "S1"
+energy_gev = 50.0
+files = ["/home/aidangardnerokearny/mucoll/jobs/output/ec_fit/S1/E50/reco_baseline/profiles_*.root"]
+
+[[sample]]
+label = "S1_E100"
+group = "S1"
+energy_gev = 100.0
+files = ["/home/aidangardnerokearny/mucoll/jobs/output/ec_fit/S1/E100/reco_baseline/profiles_*.root"]
